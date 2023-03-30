@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .flex-container-even {
+    @apply flex flex-row justify-evenly items-center w-full  ;
+  }
+}
