@@ -1,7 +1,10 @@
 import React from 'react'
 
-const Levels = ({ className, setClassName }) => {
+const Levels = ({ className, setClassName, classData }) => {
 	const classChoices = [
+		{
+			name: 'Hero',
+		},
 		{
 			name: 'Warrior',
 		},
@@ -39,6 +42,7 @@ const Levels = ({ className, setClassName }) => {
 			name: 'Champion',
 		},
 	]
+	console.log(classData)
 
 	const classList = classChoices.map((element, id) => {
 		return (
@@ -57,11 +61,13 @@ const Levels = ({ className, setClassName }) => {
 			<select onChange={handleChange} name="classList" id="classList">
 				{classList}
 			</select>
-      <div>
-        <p>{className.description}</p>
-      </div>
+			<div>
+				<p></p>
+			</div>
 		</div>
 	)
 }
+
+// We need to apply some logic for out text to render {classData[0].name}
 
 export default Levels

@@ -9,17 +9,21 @@ import { fetchFromAPI } from '../../utils/fetchFromAPI'
 
 const CharacterData = () => {
 	const [className, setClassName] = useState('')
-	const [response, setResponse] = useState([])
+	const [classData, setClassData] = useState([])
+	
 	
 	useEffect(() => {
 		fetchFromAPI(`classes?name=${className}`)
-		console.log(fetchFromAPI(`classes?name=${className}`))
+		.then((data) => setClassData(data.data))
+		
+		
 	}, [className])
 
 	return (
 		<div className="flex-container-even  h-screen">
 			<div className="flex-container-even">
-				<Levels className={className} setClassName={setClassName} />
+				<Levels className={className} setClassName={setClassName} classData={classData}
+				 />
 				<Gear />
 				<Stats />
 			</div>
