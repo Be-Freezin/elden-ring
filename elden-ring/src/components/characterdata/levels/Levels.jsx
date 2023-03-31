@@ -57,12 +57,19 @@ const Levels = ({ className, setClassName, classData }) => {
 	}
 
 	return (
-		<div>
-			<select onChange={handleChange} name="classList" id="classList">
-				{classList}
-			</select>
+		<div className="h-96 w-56">
 			<div>
-				<p></p>
+				<select onChange={handleChange} name="classList" id="classList">
+					{classList}
+				</select>
+			</div>
+			<div className="mt-6">
+				<p className="font-bold">{className}</p>
+				<ul>
+					<li>
+						
+					</li>
+				</ul>
 			</div>
 		</div>
 	)
