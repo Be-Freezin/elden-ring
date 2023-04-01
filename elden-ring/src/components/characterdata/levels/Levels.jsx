@@ -75,6 +75,7 @@ const Levels = ({ className, setClassName, classData }) => {
 	)
 }
 
-// We need to apply some logic for out text to render {classData[0].name}
+// We need to apply some logic for out text to render 
+//We also need to get our styling dialed in. I think this is something we should work on the second we get teh apiu calls working.{classData[0].name}
 
 export default Levels
