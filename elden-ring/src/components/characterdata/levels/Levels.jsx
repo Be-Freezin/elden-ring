@@ -44,6 +44,9 @@ const Levels = ({ className, setClassName, classData }) => {
 	]
 	console.log(classData)
 
+	
+	
+
 	const classList = classChoices.map((element, id) => {
 		return (
 			<option key={id} value={element.name}>
@@ -64,7 +67,7 @@ const Levels = ({ className, setClassName, classData }) => {
 				</select>
 			</div>
 			<div className="mt-6">
-				<p className="font-bold">{className}</p>
+				<p className="font-bold"></p>
 				<ul>
 					<li>
 						
