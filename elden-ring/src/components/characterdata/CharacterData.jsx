@@ -8,7 +8,7 @@ import { fetchFromAPI } from '../../utils/fetchFromAPI'
 const CharacterData = () => {
 	const [className, setClassName] = useState('Hero')
 	const [classData, setClassData] = useState([])
-	const [vigor, setVigor] = useState()
+	
 	
 	
 	
@@ -21,9 +21,9 @@ const CharacterData = () => {
 			
 		)
 	}, [className])
-	// const { name, stats, description, image } = classData
+	const { name, stats, description, image } = classData
 	
-
+console.log(stats)
 	
 	
 	return (

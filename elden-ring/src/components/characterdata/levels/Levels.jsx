@@ -44,7 +44,7 @@ const Levels = ({ className, setClassName, classData, name, stats, description, 
 	]
 	
 	
-console.log(classData)
+
 	
 	
 
@@ -69,7 +69,7 @@ console.log(classData)
 				<h3 className="font-bold text-white">{classData.name}</h3>
 			</div>
 			<div className="mt-6 text-white">
-				<div>{}</div>
+				<div></div>
 			</div>
 		</div>
 	)
