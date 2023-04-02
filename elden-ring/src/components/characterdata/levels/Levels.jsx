@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Levels = ({ className, setClassName, classData }) => {
+const Levels = ({ className, setClassName, classData, name, stats, description, image }) => {
 	const classChoices = [
 		{
 			name: 'Hero',
@@ -42,14 +42,15 @@ const Levels = ({ className, setClassName, classData }) => {
 			name: 'Champion',
 		},
 	]
-	console.log(classData)
-
+	
+	
+console.log(classData)
 	
 	
 
 	const classList = classChoices.map((element, id) => {
 		return (
-			<option key={id} value={element.name}>
+			<option className='text-black' key={id} value={element.name}>
 				{element.name}
 			</option>
 		)
@@ -60,19 +61,15 @@ const Levels = ({ className, setClassName, classData }) => {
 	}
 
 	return (
-		<div className="h-96 w-56">
+		<div className="h-96 w-56 ">
 			<div>
 				<select onChange={handleChange} name="classList" id="classList">
 					{classList}
 				</select>
+				<h3 className="font-bold text-white">{classData.name}</h3>
 			</div>
-			<div className="mt-6">
-				<p className="font-bold"></p>
-				<ul>
-					<li>
-						
-					</li>
-				</ul>
+			<div className="mt-6 text-white">
+				<div>{}</div>
 			</div>
 		</div>
 	)
