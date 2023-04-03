@@ -5,9 +5,7 @@ const BASE_URL = 'https://eldenring.fanapis.com/api'
 const options = {
 	method: 'GET',
 	url: BASE_URL,
-	params: {
-		limit: '50',
-	},
+
 	headers: {},
 }
 
