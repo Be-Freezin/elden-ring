@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Levels = ({ className, setClassName, classData, name, stats, description, image }) => {
+const Levels = ({ className, setClassName, classData, name, stats, description, image, vigor }) => {
 	const classChoices = [
 		{
 			name: 'Hero',
@@ -59,6 +59,7 @@ const Levels = ({ className, setClassName, classData, name, stats, description, 
 	function handleChange(event) {
 		setClassName(event.target.value)
 	}
+	
 
 	return (
 		<div className="h-96 w-56 ">
@@ -69,7 +70,7 @@ const Levels = ({ className, setClassName, classData, name, stats, description, 
 				<h3 className="font-bold text-white">{classData.name}</h3>
 			</div>
 			<div className="mt-6 text-white">
-				<div></div>
+				<div><span>Vigor: {}</span></div>
 			</div>
 		</div>
 	)
