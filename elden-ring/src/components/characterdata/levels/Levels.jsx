@@ -67,7 +67,7 @@ const Levels = ({ className, setClassName, classData, name, stats, description, 
 				<select onChange={handleChange} name="classList" id="classList">
 					{classList}
 				</select>
-				<h3 className="font-bold text-white">{classData.name}</h3>
+				{/* <h3 className="font-bold text-white">{classData.name}</h3> */}
 			</div>
 			<div className="mt-6 text-white">
 				<div><span>Vigor: {}</span></div>

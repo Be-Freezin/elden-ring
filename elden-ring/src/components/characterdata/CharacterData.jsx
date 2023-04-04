@@ -7,13 +7,19 @@ import { fetchFromAPI } from '../../utils/fetchFromAPI'
 
 const CharacterData = () => {
 	const [classData, setClassData] = useState([])
-	const [className, setClassName] = useState('Hero')
+	const [className, setClassName] = useState("")
+	const [dexterity, setDexterity] = useState(null)
 	useEffect(() => {
 		fetchFromAPI(`classes?name=${className}`)
-		.then(({data}) => setClassData(data.data[0]) )
+		.then(({data}) =>{ 
+			setClassData(data.data[0])
+			setDexterity(data.data[0].stats.dexterity)
+			// FOLLOW THIS, create state var above, then assign teh state within here. Do this for all the pieces of data we need
+		} )
 	}, [className])
-	const { name, stats, description, image } = classData
-
+	// const { name, stats, description, image } = classData
+	
+	console.log(dexterity)
 	// description: 'A stalwart Hero, at home with a battleaxe, descended from a badlands chieftain'
 	// id: '17f69d71826l0i32gkm3ndn3kywxqj'
 	// image: 'https://eldenring.fanapis.com/images/classes/17f69d71826l0i32gkm3ndn3kywxqj.png'
@@ -29,7 +35,7 @@ const CharacterData = () => {
 	// vigor: '14'
 
 	// const [cvigor, setCvigor] = useState("")
-	console.log(name)
+	console.log(classData)
 
 	return (
 		<div className="flex-container-even  h-screen bg-black">
