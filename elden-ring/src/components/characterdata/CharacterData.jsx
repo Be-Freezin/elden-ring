@@ -9,9 +9,8 @@ const CharacterData = () => {
 	const [classData, setClassData] = useState([])
 	const [className, setClassName] = useState('Hero')
 	useEffect(() => {
-		fetchFromAPI(`classes?name=${className}`).then((data) =>
-			setClassData(data.data[0])
-		)
+		fetchFromAPI(`classes?name=${className}`)
+		.then(({data}) => setClassData(data.data[0]) )
 	}, [className])
 	const { name, stats, description, image } = classData
 
@@ -30,7 +29,7 @@ const CharacterData = () => {
 	// vigor: '14'
 
 	// const [cvigor, setCvigor] = useState("")
-	console.log(classData)
+	console.log(name)
 
 	return (
 		<div className="flex-container-even  h-screen bg-black">
