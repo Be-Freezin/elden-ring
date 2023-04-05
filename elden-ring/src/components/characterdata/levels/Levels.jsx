@@ -21,7 +21,9 @@ const Levels = ({
 	strength,
 	setStrength,
 	vigor,
+	vig,
 	setVigor,
+	initVigor,
 	description,
 	classData,
 }) => {
@@ -66,8 +68,8 @@ const Levels = ({
 			name: 'Champion',
 		},
 	]
-	const baseVigor = classData.vigor
-	console.log(baseVigor)
+
+	
 	const classList = classChoices.map((element, id) => {
 		return (
 			<option className="text-black" key={id} value={element.name}>
@@ -80,14 +82,19 @@ const Levels = ({
 		setClassName(event.target.value)
 	}
 	function add() {
-		setVigor((prevVigor) => (prevVigor < 99 ? +prevVigor + 1 : vigor))
+		setVigor((prevVigor) => ({
+			
+				...prevVigor,
+				vig: +prevVigor.vig + 1
+			
+		}))
 	}
 	function subtract() {
 		setVigor((prevVigor) =>
-			prevVigor === baseVigor ? baseVigor : +prevVigor - 1
+			prevVigor === initVigor ? initVigor : +prevVigor - 1
 		)
 	}
-
+console.log(typeof vig)
 	// When we load the page, our ternary for subtract acts as intended, but once we hit the up arrow, or ternary breaks and we can go below the baseVigor value. We need to work on this.
 
 	return (
@@ -103,13 +110,13 @@ const Levels = ({
 				<div className="flex flex-col  justify-evenly h-full">
 					<div className="w-full flex justify-between">
 						<span>Vigor</span>
-						<span>{vigor}</span>
+						<span>{vig}</span>
 						<input
 							className="w-10 text-center bg-black border-2 border-accent-primary rounded-md"
 							type="text"
-							value={vigor}
+							value={vig}
 						/>
-						<span>{vigor}</span>
+						<span>{vig}</span>
 						<div className="flex">
 							<TiArrowSortedUp
 								onClick={add}

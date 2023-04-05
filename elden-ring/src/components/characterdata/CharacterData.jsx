@@ -19,7 +19,10 @@ const CharacterData = () => {
 	const [level, setLevel] = useState(null)
 	const [mind, setMind] = useState(null)
 	const [strength, setStrength] = useState(null)
-	const [vigor, setVigor] = useState()
+	const [vigor, setVigor] = useState({
+		initVig: null,
+		vig: null,
+	})
 	useEffect(() => {
 		fetchFromAPI(`classes?name=${className}`).then(({ data }) => {
 			setClassData(data.data[0].stats)
@@ -32,7 +35,11 @@ const CharacterData = () => {
 			setLevel(data.data[0].stats.level)
 			setMind(data.data[0].stats.mind)
 			setStrength(data.data[0].stats.strength)
-			setVigor(data.data[0].stats.vigor)
+			setVigor({
+				...vigor,
+				initVig: data.data[0].stats.vigor,
+				vig: data.data[0].stats.vigor,
+			})
 			setClassName(data.data[0].name)
 			// FOLLOW THIS, create state var above, then assign teh state within here. Do this for all the pieces of data we need
 		})
@@ -44,7 +51,7 @@ const CharacterData = () => {
 		<div className="flex-container-even  h-screen bg-black">
 			<div className="flex-container-even">
 				<Levels
-				classData={classData}
+					classData={classData}
 					className={className}
 					setClassName={setClassName}
 					dexterity={dexterity}
@@ -63,7 +70,8 @@ const CharacterData = () => {
 					setMind={setMind}
 					strength={strength}
 					setStrength={setStrength}
-					vigor={vigor}
+					vig={vigor.vig}
+					initVigor={vigor.initVig}
 					setVigor={setVigor}
 					description={description}
 				/>
