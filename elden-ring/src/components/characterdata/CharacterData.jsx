@@ -7,48 +7,65 @@ import { fetchFromAPI } from '../../utils/fetchFromAPI'
 
 const CharacterData = () => {
 	const [classData, setClassData] = useState([])
-	const [className, setClassName] = useState("")
-	const [dexterity, setDexterity] = useState(null)
-	useEffect(() => {
-		fetchFromAPI(`classes?name=${className}`)
-		.then(({data}) =>{ 
-			setClassData(data.data[0])
-			setDexterity(data.data[0].stats.dexterity)
-			// FOLLOW THIS, create state var above, then assign teh state within here. Do this for all the pieces of data we need
-		} )
-	}, [className])
-	// const { name, stats, description, image } = classData
-	
-	console.log(dexterity)
-	// description: 'A stalwart Hero, at home with a battleaxe, descended from a badlands chieftain'
-	// id: '17f69d71826l0i32gkm3ndn3kywxqj'
-	// image: 'https://eldenring.fanapis.com/images/classes/17f69d71826l0i32gkm3ndn3kywxqj.png'
-	// name: 'Hero'
-	// stats: arcane: '11'
-	// dexterity: '9'
-	// endurance: '12'
-	// faith: '8'
-	// intelligence: '7'
-	// level: '7'
-	// mind: '9'
-	// strength: '16'
-	// vigor: '14'
 
-	// const [cvigor, setCvigor] = useState("")
-	console.log(classData)
+	const [description, setDescription] = useState('')
+
+	const [className, setClassName] = useState('')
+	const [dexterity, setDexterity] = useState(null)
+	const [arcane, setArcane] = useState(null)
+	const [endurance, setEndurance] = useState(null)
+	const [faith, setFaith] = useState(null)
+	const [intelligence, setIntelligence] = useState(null)
+	const [level, setLevel] = useState(null)
+	const [mind, setMind] = useState(null)
+	const [strength, setStrength] = useState(null)
+	const [vigor, setVigor] = useState()
+	useEffect(() => {
+		fetchFromAPI(`classes?name=${className}`).then(({ data }) => {
+			setClassData(data.data[0].stats)
+			setDescription(data.data[0].description)
+			setDexterity(data.data[0].stats.dexterity)
+			setArcane(data.data[0].stats.arcane)
+			setEndurance(data.data[0].stats.endurance)
+			setFaith(data.data[0].stats.faith)
+			setIntelligence(data.data[0].stats.intelligence)
+			setLevel(data.data[0].stats.level)
+			setMind(data.data[0].stats.mind)
+			setStrength(data.data[0].stats.strength)
+			setVigor(data.data[0].stats.vigor)
+			setClassName(data.data[0].name)
+			// FOLLOW THIS, create state var above, then assign teh state within here. Do this for all the pieces of data we need
+		})
+	}, [className])
+
+	// console.log(className, description)
 
 	return (
 		<div className="flex-container-even  h-screen bg-black">
 			<div className="flex-container-even">
 				<Levels
+				classData={classData}
 					className={className}
 					setClassName={setClassName}
-					classData={classData}
-					// vigor={vigor}
-					// name={name}
-					// stats={stats}
-					// description={description}
-					// image={image}
+					dexterity={dexterity}
+					setDexterity={setDexterity}
+					arcane={arcane}
+					setArcane={setArcane}
+					endurance={endurance}
+					setEndurance={setEndurance}
+					faith={faith}
+					setFaith={setFaith}
+					intelligence={intelligence}
+					setIntelligence={setIntelligence}
+					level={level}
+					setLevel={setLevel}
+					mind={mind}
+					setMind={setMind}
+					strength={strength}
+					setStrength={setStrength}
+					vigor={vigor}
+					setVigor={setVigor}
+					description={description}
 				/>
 				<Gear />
 				<Stats />

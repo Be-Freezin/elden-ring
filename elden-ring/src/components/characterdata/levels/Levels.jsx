@@ -1,6 +1,30 @@
 import React from 'react'
+import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti'
 
-const Levels = ({ className, setClassName, classData, name, stats, description, image, vigor }) => {
+const Levels = ({
+	className,
+	setClassName,
+	dexterity,
+	setDexterity,
+	arcane,
+	setArcane,
+	endurance,
+	setEndurance,
+	faith,
+	setFaith,
+	intelligence,
+	setIntelligence,
+	level,
+	setLevel,
+	mind,
+	setMind,
+	strength,
+	setStrength,
+	vigor,
+	setVigor,
+	description,
+	classData,
+}) => {
 	const classChoices = [
 		{
 			name: 'Hero',
@@ -42,15 +66,11 @@ const Levels = ({ className, setClassName, classData, name, stats, description, 
 			name: 'Champion',
 		},
 	]
-	
-	
-
-	
-	
-
+	const baseVigor = classData.vigor
+	console.log(baseVigor)
 	const classList = classChoices.map((element, id) => {
 		return (
-			<option className='text-black' key={id} value={element.name}>
+			<option className="text-black" key={id} value={element.name}>
 				{element.name}
 			</option>
 		)
@@ -59,24 +79,64 @@ const Levels = ({ className, setClassName, classData, name, stats, description, 
 	function handleChange(event) {
 		setClassName(event.target.value)
 	}
-	
+	function add() {
+		setVigor((prevVigor) => (prevVigor < 99 ? +prevVigor + 1 : vigor))
+	}
+	function subtract() {
+		setVigor((prevVigor) =>
+			prevVigor === baseVigor ? baseVigor : +prevVigor - 1
+		)
+	}
+
+	// When we load the page, our ternary for subtract acts as intended, but once we hit the up arrow, or ternary breaks and we can go below the baseVigor value. We need to work on this.
 
 	return (
-		<div className="h-96 w-56 ">
+		<div className="data-container border-2 border-accent-primary ">
 			<div>
+				{/* Insert an input to put character custom name */}
 				<select onChange={handleChange} name="classList" id="classList">
 					{classList}
 				</select>
-				{/* <h3 className="font-bold text-white">{classData.name}</h3> */}
+				<h3 className="font-bold text-white">{className}</h3>
 			</div>
-			<div className="mt-6 text-white">
-				<div><span>Vigor: {}</span></div>
+			<div className="mt-6 text-white h-full max-h-72">
+				<div className="flex flex-col  justify-evenly h-full">
+					<div className="w-full flex justify-between">
+						<span>Vigor</span>
+						<span>{vigor}</span>
+						<input
+							className="w-10 text-center bg-black border-2 border-accent-primary rounded-md"
+							type="text"
+							value={vigor}
+						/>
+						<span>{vigor}</span>
+						<div className="flex">
+							<TiArrowSortedUp
+								onClick={add}
+								size={25}
+								className="cursor-pointer mr-2"
+							/>
+							<TiArrowSortedDown
+								onClick={subtract}
+								size={25}
+								className="cursor-pointer"
+							/>
+						</div>
+					</div>
+					<span>Mind: {mind}</span>
+					<span>Endurance: {endurance}</span>
+					<span>Strength: {strength}</span>
+					<span>Dexterity: {dexterity}</span>
+					<span>Intelligence: {intelligence}</span>
+					<span>Faith: {faith}</span>
+					<span>Arcane: {arcane}</span>
+				</div>
 			</div>
 		</div>
 	)
 }
 
-// We need to apply some logic for out text to render 
+// We need to apply some logic for out text to render
 //We also need to get our styling dialed in. I think this is something we should work on the second we get teh apiu calls working.{classData[0].name}
 
 export default Levels
