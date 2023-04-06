@@ -89,7 +89,10 @@ const Levels = ({
 	function subtract() {
 		setVigor((prevVigor) => ({
 			...prevVigor,
-			vig: prevVigor.vig === initVigor ? initVigor : +prevVigor.vig - 1,
+			vig:
+				prevVigor.vig === prevVigor.initVigor
+					? prevVigor.initVigor
+					: +prevVigor.vig - 1,
 		}))
 	}
 	console.log(typeof vig)
