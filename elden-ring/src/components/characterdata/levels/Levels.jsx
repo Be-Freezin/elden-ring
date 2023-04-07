@@ -5,26 +5,27 @@ import Stat from './Stat'
 const Levels = ({
 	className,
 	setClassName,
+	dexName,
 	initDex,
 	dex,
 	dexterity,
 	setDexterity,
-
+	arcaneName,
 	initArcance,
 	arc,
 	arcane,
 	setArcane,
-
+	endurName,
 	initEndur,
 	endur,
 	endurance,
 	setEndurance,
-
+	faithName,
 	initFaith,
 	fth,
 	faith,
 	setFaith,
-
+	intName,
 	initInt,
 	intelligence,
 	int,
@@ -32,12 +33,12 @@ const Levels = ({
 
 	level,
 	setLevel,
-
+	mindName,
 	initMind,
 	mnd,
 	mind,
 	setMind,
-
+	strName,
 	initStrength,
 	str,
 	strength,
@@ -105,14 +106,25 @@ const Levels = ({
 	function handleChange(event) {
 		setClassName(event.target.value)
 	}
-	function add(state, setState, property, value) {
+	function handleUpdateState(state, setState, property, value) {
 		setState((prevState) => ({
 			...prevState,
 			[property]: value,
 		}))
 	}
-	const handleAdd = () => {
-		add(vigor, setVigor, 'vig', vigor.vig < 98 ? +vigor.vig + 1 : vigor.vig)
+	const handleAdd = (state, setState, property, value) => {
+		handleUpdateState(
+			state,
+			setState,
+			property,
+			value < 98 ? +value + 1 : value
+		)
+		// handleUpdateState(
+		// 	state,
+		// 	setState,
+		// 	'mnd',
+		// 	mind.mnd < 98 ? +mind.mnd + 1 : mind.mnd
+		// )
 	}
 	function subtract() {
 		setVigor((prevVigor) => ({
@@ -121,7 +133,6 @@ const Levels = ({
 		}))
 	}
 	console.log(vigor)
-
 
 	return (
 		<div className="data-container border-2 border-accent-primary ">
@@ -135,17 +146,25 @@ const Levels = ({
 			<div className="mt-6 text-white h-full max-h-72">
 				<div className="flex flex-col  justify-evenly h-full">
 					<Stat
-						vig={vig}
+						value={vig}
 						name={vigName}
-						initVigor={initVigor}
-						add={handleAdd}
+						initValue={initVigor}
+						add={() => handleAdd(vigor, setVigor, 'vig', vigor.vig)}
 						subtract={subtract}
 					/>
 					<Stat
-						mind={mnd}
-						initMind={initMind}
+						value={mnd}
+						initValue={initMind}
+						add={() => handleAdd(mind, setMind, 'mnd', mind.mnd)}
+						subtract={subtract}
+						name={mindName}
+					/>
+					<Stat
+						value={endur}
+						initValue={initEndur}
 						add={handleAdd}
 						subtract={subtract}
+						name={endurName}
 					/>
 
 					{/* <span>Mind: {mind}</span>

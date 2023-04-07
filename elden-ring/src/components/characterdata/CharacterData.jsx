@@ -12,36 +12,43 @@ const CharacterData = () => {
 
 	const [className, setClassName] = useState('')
 	const [dexterity, setDexterity] = useState({
+		name: 'Dexterity',
 		initDex: null,
 		dex: null,
 	})
 	const [arcane, setArcane] = useState({
+		name: 'Arcane',
 		initArcane: null,
 		arc: null,
 	})
 	const [endurance, setEndurance] = useState({
+		name: 'Endurance',
 		initEndurance: null,
 		endur: null,
 	})
 	const [faith, setFaith] = useState({
+		name: 'Faith',
 		initFaith: null,
 		fth: null,
 	})
 	const [intelligence, setIntelligence] = useState({
+		name: 'Intelligence',
 		initInt: null,
 		int: null,
 	})
 	const [level, setLevel] = useState(null)
 	const [mind, setMind] = useState({
+		name: 'Mind',
 		initMind: null,
 		mnd: null,
 	})
 	const [strength, setStrength] = useState({
+		name: 'Strength',
 		initStr: null,
 		str: null,
 	})
 	const [vigor, setVigor] = useState({
-		name:'Vigor',
+		name: 'Vigor',
 		initVig: null,
 		vig: null,
 	})
@@ -102,40 +109,41 @@ const CharacterData = () => {
 			<div className="flex-container-even">
 				<Levels
 					classData={classData}
-
 					className={className}
 					setClassName={setClassName}
-
+					dexName={dexterity.name}
 					initDex={dexterity.initDex}
 					dex={dexterity.dex}
 					dexterity={dexterity}
 					setDexterity={setDexterity}
-
+					arcaneName={arcane.name}
 					arc={arcane.arc}
 					initArcane={arcane.initArcane}
 					arcane={arcane}
 					setArcane={setArcane}
-
+					endurName={endurance.name}
 					initEndurance={endurance.initEndurance}
 					endurance={endurance}
 					endur={endurance.endur}
 					setEndurance={setEndurance}
-
+					faithName={faith.name}
 					fth={faith.fth}
 					faith={faith}
 					initFaith={faith.initFaith}
 					setFaith={setFaith}
-
+					intName={intelligence.name}
 					int={intelligence.int}
 					intelligence={intelligence}
 					initInt={intelligence.initInt}
 					setIntelligence={setIntelligence}
 					level={level}
 					setLevel={setLevel}
+					mindName={mind.name}
 					mnd={mind.mnd}
 					mind={mind}
 					initMind={mind.initMind}
 					setMind={setMind}
+					strName={strength.name}
 					strength={strength}
 					str={strength.str}
 					initStrength={strength.initStr}
