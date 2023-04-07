@@ -11,7 +11,7 @@ const Levels = ({
 	dexterity,
 	setDexterity,
 	arcaneName,
-	initArcance,
+	initArcane,
 	arc,
 	arcane,
 	setArcane,
@@ -172,7 +172,9 @@ const Levels = ({
 					<Stat
 						value={int}
 						initValue={initInt}
-						add={() => handleAdd(intelligence, setIntelligence, 'int', intelligence.int)}
+						add={() =>
+							handleAdd(intelligence, setIntelligence, 'int', intelligence.int)
+						}
 						subtract={subtract}
 						name={intName}
 					/>
@@ -183,12 +185,13 @@ const Levels = ({
 						subtract={subtract}
 						name={faithName}
 					/>
-
-					{/* 
-					
-					
-					
-					<span>Arcane: {arcane}</span> */}
+					<Stat
+						value={arc}
+						initValue={initArcane}
+						add={() => handleAdd(arcane, setArcane, 'arc', arcane.arc)}
+						subtract={subtract}
+						name={arcaneName}
+					/>
 				</div>
 			</div>
 		</div>
