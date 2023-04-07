@@ -18,3 +18,17 @@ When i console.log the classData (where i stored the api call) i return
 	// vigor: '14'
 
     What i want to do is store each of these returned items in its own state. The goal here is to pass the state to its sibling component, and be able to change the values (example: Change the level of vigor, faith, etc)
+
+
+
+
+
+
+
+
+	function add() {
+		setVigor((prevVigor) => ({
+			...prevVigor,
+			vig: prevVigor.vig > 98 ? prevVigor.vig : +prevVigor.vig + 1,
+		}))
+	}

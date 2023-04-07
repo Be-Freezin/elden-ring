@@ -1,29 +1,54 @@
 import React from 'react'
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti'
+import Stat from './Stat'
 
 const Levels = ({
 	className,
 	setClassName,
+	initDex,
+	dex,
 	dexterity,
 	setDexterity,
+
+	initArcance,
+	arc,
 	arcane,
 	setArcane,
+
+	initEndur,
+	endur,
 	endurance,
 	setEndurance,
+
+	initFaith,
+	fth,
 	faith,
 	setFaith,
+
+	initInt,
 	intelligence,
+	int,
 	setIntelligence,
+
 	level,
 	setLevel,
+
+	initMind,
+	mnd,
 	mind,
 	setMind,
+
+	initStrength,
+	str,
 	strength,
 	setStrength,
+
+	vigName,
 	vigor,
 	vig,
 	setVigor,
 	initVigor,
+
 	description,
 	classData,
 }) => {
@@ -80,23 +105,23 @@ const Levels = ({
 	function handleChange(event) {
 		setClassName(event.target.value)
 	}
-	function add() {
-		setVigor((prevVigor) => ({
-			...prevVigor,
-			vig: prevVigor.vig > 99 ? prevVigor.vig : +prevVigor.vig + 1,
+	function add(state, setState, property, value) {
+		setState((prevState) => ({
+			...prevState,
+			[property]: value,
 		}))
+	}
+	const handleAdd = () => {
+		add(vigor, setVigor, 'vig', vigor.vig < 98 ? +vigor.vig + 1 : vigor.vig)
 	}
 	function subtract() {
 		setVigor((prevVigor) => ({
 			...prevVigor,
-			vig:
-				prevVigor.vig === prevVigor.initVigor
-					? prevVigor.initVigor
-					: +prevVigor.vig - 1,
+			vig: prevVigor.vig === prevVigor.initVigor ? null : +prevVigor.vig - 1,
 		}))
 	}
-	console.log(typeof vig)
-	// When we load the page, our ternary for subtract acts as intended, but once we hit the up arrow, or ternary breaks and we can go below the baseVigor value. We need to work on this.
+	console.log(vigor)
+
 
 	return (
 		<div className="data-container border-2 border-accent-primary ">
@@ -109,35 +134,27 @@ const Levels = ({
 			</div>
 			<div className="mt-6 text-white h-full max-h-72">
 				<div className="flex flex-col  justify-evenly h-full">
-					<div className="w-full flex justify-between">
-						<span>Vigor</span>
-						<span>{initVigor}</span>
-						<input
-							className="w-10 text-center bg-black border-2 border-accent-primary rounded-md"
-							type="text"
-							value={vig}
-						/>
-						<span>{vig}</span>
-						<div className="flex">
-							<TiArrowSortedUp
-								onClick={add}
-								size={25}
-								className="cursor-pointer mr-2"
-							/>
-							<TiArrowSortedDown
-								onClick={subtract}
-								size={25}
-								className="cursor-pointer"
-							/>
-						</div>
-					</div>
-					<span>Mind: {mind}</span>
+					<Stat
+						vig={vig}
+						name={vigName}
+						initVigor={initVigor}
+						add={handleAdd}
+						subtract={subtract}
+					/>
+					<Stat
+						mind={mnd}
+						initMind={initMind}
+						add={handleAdd}
+						subtract={subtract}
+					/>
+
+					{/* <span>Mind: {mind}</span>
 					<span>Endurance: {endurance}</span>
 					<span>Strength: {strength}</span>
 					<span>Dexterity: {dexterity}</span>
 					<span>Intelligence: {intelligence}</span>
 					<span>Faith: {faith}</span>
-					<span>Arcane: {arcane}</span>
+					<span>Arcane: {arcane}</span> */}
 				</div>
 			</div>
 		</div>
