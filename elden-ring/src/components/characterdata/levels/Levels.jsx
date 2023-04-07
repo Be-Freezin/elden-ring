@@ -176,11 +176,18 @@ const Levels = ({
 						subtract={subtract}
 						name={intName}
 					/>
+					<Stat
+						value={fth}
+						initValue={initFaith}
+						add={() => handleAdd(faith, setFaith, 'fth', faith.fth)}
+						subtract={subtract}
+						name={faithName}
+					/>
 
 					{/* 
 					
-					<span>Intelligence: {intelligence}</span>
-					<span>Faith: {faith}</span>
+					
+					
 					<span>Arcane: {arcane}</span> */}
 				</div>
 			</div>
