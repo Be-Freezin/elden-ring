@@ -162,10 +162,15 @@ const Levels = ({
 						subtract={subtract}
 						name={strName}
 					/>
+					<Stat
+						value={dex}
+						initValue={initDex}
+						add={() => handleAdd(dexterity, setDexterity, 'dex', dexterity.dex)}
+						subtract={subtract}
+						name={dexName}
+					/>
 
-					{/* <span>Mind: {mind}</span>
-					<span>Endurance: {endurance}</span>
-					<span>Strength: {strength}</span>
+					{/* 
 					<span>Dexterity: {dexterity}</span>
 					<span>Intelligence: {intelligence}</span>
 					<span>Faith: {faith}</span>
