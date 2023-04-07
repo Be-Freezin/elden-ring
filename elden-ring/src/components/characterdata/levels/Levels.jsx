@@ -132,7 +132,10 @@ const Levels = ({
 				</select>
 				<h3 className="font-bold text-white">{className}</h3>
 			</div>
-			<div className="mt-6 text-white h-full max-h-72">
+			<div>
+				
+			</div>
+			<div className="mt-6 text-white h-full max-h-72 px-2">
 				<div className="flex flex-col  justify-evenly h-full">
 					<Stat
 						value={vig}

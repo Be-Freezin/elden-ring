@@ -4,7 +4,7 @@ import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti'
 const Stat = ({ value, initValue, add, subtract, name }) => {
 	return (
 		<div className="w-full flex justify-between">
-			<span>{name}</span>
+			<span className='w-20'>{name}</span>
 			<span>{initValue}</span>
 			<input
 				className="w-10 text-center bg-black border-2 border-accent-primary rounded-md"
