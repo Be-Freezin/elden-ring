@@ -97,7 +97,7 @@ const Levels = ({
 
 	const classList = classChoices.map((element, id) => {
 		return (
-			<option className="text-black" key={id} value={element.name}>
+			<option className="text-white " key={id} value={element.name}>
 				{element.name}
 			</option>
 		)
@@ -124,18 +124,32 @@ const Levels = ({
 	console.log(vigor)
 
 	return (
-		<div className="data-container border-2 border-accent-primary ">
-			<div>
-				{/* Insert an input to put character custom name */}
-				<select onChange={handleChange} name="classList" id="classList">
+		<div className="data-container border-2 border-accent-primary h-fit ">
+			<div className="flex flex-col px-2">
+				<span className="text-sm text-white_muted">Starting Class</span>
+				<select
+					className="bg-black text-white border-white_muted border-b-2"
+					onChange={handleChange}
+					name="classList"
+					id="classList"
+				>
 					{classList}
 				</select>
-				<h3 className="font-bold text-white">{className}</h3>
+				{/* <h3 className="font-bold text-white">{className}</h3> */}
+				<span className="text-sm text-white_muted">Character Name</span>
+				<input
+					className="bg-black text-white border-white_muted border-b-2"
+					type="text"
+				/>
 			</div>
-			<div>
-				
-			</div>
-			<div className="mt-6 text-white h-full max-h-72 px-2">
+
+			<div className="mt-6 text-white  h-96 px-2 py-4">
+				<div className=" w-3/4 flex justify-between text-sm text-white_muted">
+					<span className="">Stat</span>
+					<span className="ml-14">Init</span>
+					<span className="ml-2">Value</span>
+					<span>Total</span>
+				</div>
 				<div className="flex flex-col  justify-evenly h-full">
 					<Stat
 						value={vig}
