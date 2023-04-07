@@ -16,7 +16,7 @@ const Levels = ({
 	arcane,
 	setArcane,
 	endurName,
-	initEndur,
+	initEndurance,
 	endur,
 	endurance,
 	setEndurance,
@@ -113,18 +113,7 @@ const Levels = ({
 		}))
 	}
 	const handleAdd = (state, setState, property, value) => {
-		handleUpdateState(
-			state,
-			setState,
-			property,
-			value < 98 ? +value + 1 : value
-		)
-		// handleUpdateState(
-		// 	state,
-		// 	setState,
-		// 	'mnd',
-		// 	mind.mnd < 98 ? +mind.mnd + 1 : mind.mnd
-		// )
+		handleUpdateState(state, setState, property, value < 98 ? +value + 1 : value)
 	}
 	function subtract() {
 		setVigor((prevVigor) => ({
@@ -161,8 +150,8 @@ const Levels = ({
 					/>
 					<Stat
 						value={endur}
-						initValue={initEndur}
-						add={handleAdd}
+						initValue={initEndurance}
+						add={() => handleAdd(endurance, setEndurance, 'endur', endurance.endur)}
 						subtract={subtract}
 						name={endurName}
 					/>
