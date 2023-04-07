@@ -155,6 +155,13 @@ const Levels = ({
 						subtract={subtract}
 						name={endurName}
 					/>
+					<Stat
+						value={str}
+						initValue={initStrength}
+						add={() => handleAdd(strength, setStrength, 'str', strength.str)}
+						subtract={subtract}
+						name={strName}
+					/>
 
 					{/* <span>Mind: {mind}</span>
 					<span>Endurance: {endurance}</span>
