@@ -112,12 +112,16 @@ const Levels = ({
 			[property]: value,
 		}))
 	}
-	function handleLevel() {
+	function increaseLevel() {
 		setLevel(+level + 1) 
 	}
+	function decreaseLevel() {
+		setLevel(+level - 1) 
+	}
+	//! APPLY LOGIC TO THE LEVELS
 	const handleAdd = (state, setState, property, value) => {
 		handleUpdateState(state, setState, property, value < 98 ? +value + 1 : value)
-		handleLevel()
+		increaseLevel()
 		
 	}
 	const handleSubtract = (state, setState, property, init, value) => {
@@ -128,6 +132,7 @@ const Levels = ({
 			init,
 			value > init ? +value - 1 : value
 		)
+		decreaseLevel()
 	}
 	//! WORK ON THIS SUBTRACTION METHOD
 	function subtract() {
