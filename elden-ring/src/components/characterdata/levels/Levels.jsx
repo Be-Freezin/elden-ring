@@ -1,5 +1,5 @@
 import React from 'react'
-import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti'
+
 import Stat from './Stat'
 
 const Levels = ({
@@ -115,6 +115,16 @@ const Levels = ({
 	const handleAdd = (state, setState, property, value) => {
 		handleUpdateState(state, setState, property, value < 98 ? +value + 1 : value)
 	}
+	const handleSubtract = (state, setState, property, init, value) => {
+		handleUpdateState(
+			state,
+			setState,
+			property,
+			init,
+			value > init ? +value - 1 : value
+		)
+	}
+	//! WORK ON THIS SUBTRACTION METHOD
 	function subtract() {
 		setVigor((prevVigor) => ({
 			...prevVigor,
@@ -160,7 +170,9 @@ const Levels = ({
 						name={vigName}
 						initValue={initVigor}
 						add={() => handleAdd(vigor, setVigor, 'vig', vigor.vig)}
-						subtract={subtract}
+						subtract={() =>
+							handleSubtract(vigor, setVigor, 'vig', vigor.initVig, vigor.vig)
+						}
 					/>
 					<Stat
 						value={mnd}
