@@ -147,9 +147,9 @@ const Levels = ({
 		<div className="data-container border-2 border-accent-primary h-fit ">
 			<div className="flex flex-col px-2 justify-evenly h-36">
 				<div className="flex flex-col">
-					<span className="text-sm text-white_muted">Starting Class</span>
+					<span className="small-txt">Starting Class</span>
 					<select
-						className="bg-black text-white border-white_muted border-b-2"
+						className="dropdown-select"
 						onChange={handleChange}
 						name="classList"
 						id="classList"
@@ -159,13 +159,10 @@ const Levels = ({
 				</div>
 				{/* <h3 className="font-bold text-white">{className}</h3> */}
 				<div className="flex flex-col">
-					<span className="text-sm text-white_muted">Character Name</span>
-					<input
-						className="bg-black text-white border-white_muted border-b-2"
-						type="text"
-					/>
+					<span className="small-txt">Character Name</span>
+					<input className="dropdown-select" type="text" />
 				</div>
-				<span className='text-white'>Level : {level}</span>
+				<span className="text-white">Level : {level}</span>
 			</div>
 
 			<div className="mt-6 text-white  h-96 px-2 py-4">

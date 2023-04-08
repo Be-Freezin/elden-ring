@@ -9,4 +9,10 @@
   .data-container{
     @apply h-96 w-80;
   }
+  .dropdown-select{
+    @apply bg-black text-white border-white_muted border-b-2
+  }
+  .small-txt{
+    @apply text-sm text-white_muted
+  }
 }
