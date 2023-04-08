@@ -1,4 +1,6 @@
 import React from 'react'
+import HeadArmor from './HeadArmor'
+import ChestArmor from './ChestArmor'
 
 const Gear = ({ armor }) => {
 	const helmArmor = armor.filter((item) => item.category === 'Helm')
@@ -22,28 +24,10 @@ const Gear = ({ armor }) => {
 	return (
 		<div className="data-container border-2 border-accent-primary h-fit w-fit ">
 			<div className="flex">
-				<div className="flex flex-col">
-					<span className="small-txt">Head Armor</span>
-					<select
-						className="dropdown-select"
-						name="armorList"
-						id="armorList"
-						placeholder="Head Armor"
-					>
-						{helmList}
-					</select>
-				</div>
-				<div className="flex flex-col">
-					<span className="small-txt">Chest Armor</span>
-					<select
-						className="dropdown-select"
-						name="armorList"
-						id="armorList"
-						placeholder="Chest Armor"
-					>
-						{chestList}
-					</select>
-				</div>
+        <HeadArmor helmList={helmList} />
+        <ChestArmor chestList={chestList} />
+				
+				
 			</div>
 			<div className="flex">
 				<div className="flex flex-col">
