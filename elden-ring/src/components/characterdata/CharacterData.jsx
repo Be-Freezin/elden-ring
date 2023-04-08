@@ -52,6 +52,8 @@ const CharacterData = () => {
 		initVig: null,
 		vig: null,
 	})
+
+	const [armorData, setArmorData] = useState([])
 	useEffect(() => {
 		fetchFromAPI(`classes?name=${className}`).then(({ data }) => {
 			setClassData(data.data[0].stats)
@@ -98,11 +100,17 @@ const CharacterData = () => {
 				vig: data.data[0].stats.vigor,
 			})
 			setClassName(data.data[0].name)
-			// FOLLOW THIS, create state var above, then assign teh state within here. Do this for all the pieces of data we need
+			
 		})
 	}, [className])
 
-	// console.log(className, description)
+	useEffect(() => {
+		fetchFromAPI(`armors?limit=500`).then(({data}) => {
+			setArmorData(data.data)
+		})
+	}, [])
+
+	console.log(armorData)
 
 	return (
 		<div className="flex-container-even  h-screen bg-black">
@@ -155,7 +163,7 @@ const CharacterData = () => {
 					setVigor={setVigor}
 					description={description}
 				/>
-				<Gear />
+				<Gear armor={armorData} />
 				<Stats />
 			</div>
 		</div>

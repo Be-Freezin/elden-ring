@@ -112,8 +112,13 @@ const Levels = ({
 			[property]: value,
 		}))
 	}
+	function handleLevel() {
+		setLevel(+level + 1) 
+	}
 	const handleAdd = (state, setState, property, value) => {
 		handleUpdateState(state, setState, property, value < 98 ? +value + 1 : value)
+		handleLevel()
+		
 	}
 	const handleSubtract = (state, setState, property, init, value) => {
 		handleUpdateState(
@@ -131,7 +136,7 @@ const Levels = ({
 			vig: prevVigor.vig === prevVigor.initVigor ? null : +prevVigor.vig - 1,
 		}))
 	}
-	console.log(vigor)
+	
 
 	return (
 		<div className="data-container border-2 border-accent-primary h-fit ">
@@ -155,6 +160,7 @@ const Levels = ({
 						type="text"
 					/>
 				</div>
+				<span className='text-white'>Level : {level}</span>
 			</div>
 
 			<div className="mt-6 text-white  h-96 px-2 py-4">
