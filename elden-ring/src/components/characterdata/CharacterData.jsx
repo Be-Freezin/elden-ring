@@ -110,7 +110,7 @@ const CharacterData = () => {
 		})
 	}, [])
 
-	console.log(armorData)
+	
 
 	return (
 		<div className="flex-container-even  h-screen bg-black">
