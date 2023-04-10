@@ -10,9 +10,12 @@
     @apply h-96 w-80;
   }
   .dropdown-select{
-    @apply bg-black text-white border-white_muted border-b-2
+    @apply bg-black text-white border-white_muted border-b-2 w-full
   }
   .small-txt{
     @apply text-sm text-white_muted
+  }
+  .mobile-container{
+    @apply flex flex-col
   }
 }

@@ -100,21 +100,25 @@ const CharacterData = () => {
 				vig: data.data[0].stats.vigor,
 			})
 			setClassName(data.data[0].name)
-			
 		})
 	}, [className])
 
 	useEffect(() => {
-		fetchFromAPI(`armors?limit=568`).then(({ data }) => {
+		let page = 0
+		
+		
+			fetchFromAPI(`armors?limit=100&page=${page}`).then(({ data }) => {
 			setArmorData(data.data)
-		})
+		}) 
+		
+		
+		// }
 	}, [])
 
-	
-
+	console.log(armorData)
 	return (
-		<div className="flex-container-even  h-screen bg-black">
-			<div className="flex-container-even">
+		<div className="lg:flex-container-even  h-screen bg-black ">
+			<div className="mobile-container lg:flex-container-even ">
 				<Levels
 					classData={classData}
 					className={className}
