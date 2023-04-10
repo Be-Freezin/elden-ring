@@ -105,13 +105,11 @@ const CharacterData = () => {
 
 	useEffect(() => {
 		let page = 0
-		
-		
-			fetchFromAPI(`armors?limit=100&page=${page}`).then(({ data }) => {
+
+		fetchFromAPI(`armors?limit=200&page=${page}`).then(({ data }) => {
 			setArmorData(data.data)
-		}) 
-		
-		
+		})
+
 		// }
 	}, [])
 
