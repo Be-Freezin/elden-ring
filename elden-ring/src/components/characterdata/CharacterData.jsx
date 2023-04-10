@@ -102,18 +102,27 @@ const CharacterData = () => {
 			setClassName(data.data[0].name)
 		})
 	}, [className])
-
+const handleScroll=(e) => {
+console.log("hi")
+}
 	useEffect(() => {
 		let page = 0
-
-		fetchFromAPI(`armors?limit=200&page=${page}`).then(({ data }) => {
-			setArmorData(data.data)
+		
+		fetchFromAPI(`armors?limit=100&page=${page}`).then(({ data }) => {
+			const newArmor= []
+			data.data.forEach(e => {
+				newArmor.push(e)
+				setArmorData(newArmor)
+			});
+			window.addEventListener('scroll', handleScroll)
+			// setArmorData(data.data)
 		})
+		
 
 		// }
 	}, [])
 
-	console.log(armorData)
+	console.log( armorData)
 	return (
 		<div className="lg:flex-container-even  h-screen bg-black ">
 			<div className="mobile-container lg:flex-container-even ">
@@ -165,7 +174,8 @@ const CharacterData = () => {
 					setVigor={setVigor}
 					description={description}
 				/>
-				<Gear armor={armorData} />
+				<Gear armor={armorData}
+				handleScroll={handleScroll} />
 				<Stats />
 			</div>
 		</div>
