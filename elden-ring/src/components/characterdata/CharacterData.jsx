@@ -103,75 +103,19 @@ const CharacterData = () => {
 		})
 	}, [className])
 
-	const handleScroll = (e) => {
-		console.log('hi')
-	}
-	//! MIGHT NOT NEED THE HANDLESCROLL
 	useEffect(() => {
 		let page = 0
-const newArmor = []
-		fetchFromAPI(`armors?limit=100&page=0`)
-		.then(({ data }) => {
-			
-			data.data.forEach((e) => {
-				newArmor.push(e)
-				setArmorData(newArmor)
-			})
-			window.addEventListener('scroll', handleScroll)
-			// setArmorData(data.data)
-		})
-		fetchFromAPI(`armors?limit=100&page=1`)
-		.then(({ data }) => {
-			
-			data.data.forEach((e) => {
-				newArmor.push(e)
-				setArmorData(newArmor)
-			})
-			window.addEventListener('scroll', handleScroll)
-			// setArmorData(data.data)
-		})
-		fetchFromAPI(`armors?limit=100&page=2`)
-		.then(({ data }) => {
-			
-			data.data.forEach((e) => {
-				newArmor.push(e)
-				setArmorData(newArmor)
-			})
-			window.addEventListener('scroll', handleScroll)
-			// setArmorData(data.data)
-		})
-		fetchFromAPI(`armors?limit=100&page=3`)
-		.then(({ data }) => {
-			
-			data.data.forEach((e) => {
-				newArmor.push(e)
-				setArmorData(newArmor)
-			})
-			window.addEventListener('scroll', handleScroll)
-			// setArmorData(data.data)
-		})
-		fetchFromAPI(`armors?limit=100&page=4`)
-		.then(({ data }) => {
-			
-			data.data.forEach((e) => {
-				newArmor.push(e)
-				setArmorData(newArmor)
-			})
-			window.addEventListener('scroll', handleScroll)
-			// setArmorData(data.data)
-		})
-		fetchFromAPI(`armors?limit=100&page=5`)
-		.then(({ data }) => {
-			
-			data.data.forEach((e) => {
-				newArmor.push(e)
-				setArmorData(newArmor)
-			})
-			window.addEventListener('scroll', handleScroll)
-			// setArmorData(data.data)
-		})
-//! THIS WORKS FOR NOW< BUT NOT IDEAL. REFACTOR THESE FETCH CALLS SO WE ONLY CALL IT ONCE 
-		// }
+		const newArmor = []
+		const fetchArmorData = async () => {
+			while (page < 6){
+				const { data } = await fetchFromAPI(`armors?limit=100&page=${page}`)
+				newArmor.push(...data.data)
+				page ++
+			}
+			setArmorData(newArmor)
+		}
+		fetchArmorData()
+	
 	}, [])
 
 	console.log(armorData)
@@ -226,8 +170,7 @@ const newArmor = []
 					setVigor={setVigor}
 					description={description}
 				/>
-				<Gear armor={armorData}
-				handleScroll />
+				<Gear armor={armorData} handleScroll />
 				<Stats />
 			</div>
 		</div>
