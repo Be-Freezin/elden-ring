@@ -113,18 +113,16 @@ const CharacterData = () => {
 	}, [])
 
 	return (
-		<div className="lg:flex-container-even  h-screen bg-black ">
-			<div className="mobile-container lg:flex-container-even ">
+		<div className="lg:flex-container-even mobile-container  ">
+			<div className="mobile-container lg:flex-container-even h-screen bg-black">
 				<Levels
 					stats={stats}
 					setStats={setStats}
 					classData={classData}
 					className={className}
 					setClassName={setClassName}
-					
 					level={level}
 					setLevel={setLevel}
-					
 					description={description}
 				/>
 				<Gear armor={armorData} talismansData={talismansData} />

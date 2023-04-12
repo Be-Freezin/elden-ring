@@ -41,23 +41,20 @@ const Gear = ({ armor, talismansData }) => {
 	})
 
 	return (
-		<div className="data-container border-2 border-accent-primary h-fit w-fit ">
-			<div className="flex">
+		<div className="mobile-container md:data-container  border-2 border-accent-primary   p-2 ">
+			<div className="md:flex-row md:justify-evenly  mobile-container">
 				<HeadArmor helmList={helmList} />
 				<ChestArmor chestList={chestList} />
 			</div>
-			<div className="flex">
+			<div className="md:flex-row md:justify-evenly  mobile-container">
 				<LegArmor legList={legList} />
 				<HandArmor handList={handList} />
 			</div>
-			{/*  */}
-			<div className="flex">
+			{/* TALISMANS */}
+			<div className="md:flex-row md:justify-evenly  mobile-container">
 				<Talismans talismansData={talismansData} />
-				
 			</div>
-			<div className="flex">
-				
-			</div>
+			<div className="flex"></div>
 		</div>
 	)
 }

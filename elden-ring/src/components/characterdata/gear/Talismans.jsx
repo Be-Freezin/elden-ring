@@ -11,8 +11,8 @@ const Talismans = ({ talismansData }) => {
 
 	return (
 		<div>
-			<div className=' flex'>
-				<div className="flex flex-col">
+			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
+				<div className="flex flex-col ">
 					<span className="small-txt">Talisman 1</span>
 					<select
 						className="dropdown-select"
@@ -22,8 +22,8 @@ const Talismans = ({ talismansData }) => {
 					>
 						{talismansList}
 					</select>
-                </div>
-                <div className="flex flex-col">
+				</div>
+				<div className="flex flex-col">
 					<span className="small-txt">Talisman 2</span>
 					<select
 						className="dropdown-select"
@@ -33,8 +33,7 @@ const Talismans = ({ talismansData }) => {
 					>
 						{talismansList}
 					</select>
-                </div>
-				
+				</div>
 			</div>
 		</div>
 	)

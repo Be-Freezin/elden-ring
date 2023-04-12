@@ -6,7 +6,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<main className='mobile-container'>
+			<main className='mobile-container '>
 				<CharacterData />
 			</main>
 		</div>

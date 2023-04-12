@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ChestArmor = ({ chestList, handleScroll }) => {
+const ChestArmor = ({ chestList }) => {
 	return (
 		<div>
 			<div className="flex flex-col">
@@ -10,7 +10,7 @@ const ChestArmor = ({ chestList, handleScroll }) => {
 					name="armorList"
 					id="armorList"
 					placeholder="Chest Armor"
-					onScroll={handleScroll}
+					
 				>
 					{chestList}
 				</select>
