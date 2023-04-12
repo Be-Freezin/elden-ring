@@ -54,6 +54,7 @@ const CharacterData = () => {
 	})
 
 	const [armorData, setArmorData] = useState([])
+	const [talismansData, setTalismansData] = useState([])
 	useEffect(() => {
 		fetchFromAPI(`classes?name=${className}`).then(({ data }) => {
 			setClassData(data.data[0].stats)
@@ -118,7 +119,16 @@ const CharacterData = () => {
 	
 	}, [])
 
-	console.log(armorData)
+	
+
+	console.log(talismansData)
+useEffect(() => {
+		fetchFromAPI(`talismans?limit=100`).then(({ data }) => {
+			setTalismansData(data.data)
+		})
+	}, [])
+	
+
 	return (
 		<div className="lg:flex-container-even  h-screen bg-black ">
 			<div className="mobile-container lg:flex-container-even ">
@@ -170,7 +180,7 @@ const CharacterData = () => {
 					setVigor={setVigor}
 					description={description}
 				/>
-				<Gear armor={armorData} handleScroll />
+				<Gear armor={armorData} talismansData={talismansData}  />
 				<Stats />
 			</div>
 		</div>

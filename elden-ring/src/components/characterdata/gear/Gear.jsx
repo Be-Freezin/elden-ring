@@ -3,8 +3,9 @@ import HeadArmor from './HeadArmor'
 import ChestArmor from './ChestArmor'
 import LegArmor from './LegArmor'
 import HandArmor from './HandArmor'
+import Talismans from './Talismans'
 
-const Gear = ({ armor, handleScroll }) => {
+const Gear = ({ armor, talismansData }) => {
 	const helmArmor = armor.filter((item) => item.category === 'Helm')
 	const chestArmor = armor.filter((item) => item.category === 'Chest Armor')
 	const legArmor = armor.filter((item) => item.category === 'Leg Armor')
@@ -38,16 +39,24 @@ const Gear = ({ armor, handleScroll }) => {
 			</option>
 		)
 	})
-	
+
 	return (
 		<div className="data-container border-2 border-accent-primary h-fit w-fit ">
 			<div className="flex">
 				<HeadArmor helmList={helmList} />
-				<ChestArmor chestList={chestList} handleScroll={handleScroll}   />
+				<ChestArmor chestList={chestList} />
 			</div>
 			<div className="flex">
 				<LegArmor legList={legList} />
 				<HandArmor handList={handList} />
+			</div>
+			{/*  */}
+			<div className="flex">
+				<Talismans talismansData={talismansData} />
+				
+			</div>
+			<div className="flex">
+				
 			</div>
 		</div>
 	)
