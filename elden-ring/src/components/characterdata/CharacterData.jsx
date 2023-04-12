@@ -102,27 +102,79 @@ const CharacterData = () => {
 			setClassName(data.data[0].name)
 		})
 	}, [className])
-const handleScroll=(e) => {
-console.log("hi")
-}
+
+	const handleScroll = (e) => {
+		console.log('hi')
+	}
+	//! MIGHT NOT NEED THE HANDLESCROLL
 	useEffect(() => {
 		let page = 0
-		
-		fetchFromAPI(`armors?limit=100&page=${page}`).then(({ data }) => {
-			const newArmor= []
-			data.data.forEach(e => {
+const newArmor = []
+		fetchFromAPI(`armors?limit=100&page=0`)
+		.then(({ data }) => {
+			
+			data.data.forEach((e) => {
 				newArmor.push(e)
 				setArmorData(newArmor)
-			});
+			})
 			window.addEventListener('scroll', handleScroll)
 			// setArmorData(data.data)
 		})
-		
-
+		fetchFromAPI(`armors?limit=100&page=1`)
+		.then(({ data }) => {
+			
+			data.data.forEach((e) => {
+				newArmor.push(e)
+				setArmorData(newArmor)
+			})
+			window.addEventListener('scroll', handleScroll)
+			// setArmorData(data.data)
+		})
+		fetchFromAPI(`armors?limit=100&page=2`)
+		.then(({ data }) => {
+			
+			data.data.forEach((e) => {
+				newArmor.push(e)
+				setArmorData(newArmor)
+			})
+			window.addEventListener('scroll', handleScroll)
+			// setArmorData(data.data)
+		})
+		fetchFromAPI(`armors?limit=100&page=3`)
+		.then(({ data }) => {
+			
+			data.data.forEach((e) => {
+				newArmor.push(e)
+				setArmorData(newArmor)
+			})
+			window.addEventListener('scroll', handleScroll)
+			// setArmorData(data.data)
+		})
+		fetchFromAPI(`armors?limit=100&page=4`)
+		.then(({ data }) => {
+			
+			data.data.forEach((e) => {
+				newArmor.push(e)
+				setArmorData(newArmor)
+			})
+			window.addEventListener('scroll', handleScroll)
+			// setArmorData(data.data)
+		})
+		fetchFromAPI(`armors?limit=100&page=5`)
+		.then(({ data }) => {
+			
+			data.data.forEach((e) => {
+				newArmor.push(e)
+				setArmorData(newArmor)
+			})
+			window.addEventListener('scroll', handleScroll)
+			// setArmorData(data.data)
+		})
+//! THIS WORKS FOR NOW< BUT NOT IDEAL. REFACTOR THESE FETCH CALLS SO WE ONLY CALL IT ONCE 
 		// }
 	}, [])
 
-	console.log( armorData)
+	console.log(armorData)
 	return (
 		<div className="lg:flex-container-even  h-screen bg-black ">
 			<div className="mobile-container lg:flex-container-even ">
@@ -175,7 +227,7 @@ console.log("hi")
 					description={description}
 				/>
 				<Gear armor={armorData}
-				handleScroll={handleScroll} />
+				handleScroll />
 				<Stats />
 			</div>
 		</div>
