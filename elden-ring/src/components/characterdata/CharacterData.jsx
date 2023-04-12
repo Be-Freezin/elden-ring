@@ -85,7 +85,7 @@ const CharacterData = () => {
 			})
 
 			
-			setLevel(data.data[0].stats.level)
+			
 			
 			setClassName(data.data[0].name)
 		})

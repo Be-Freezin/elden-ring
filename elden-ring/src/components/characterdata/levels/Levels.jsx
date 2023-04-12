@@ -77,13 +77,25 @@ const Levels = ({
 		}))
 	}
 	function increaseLevel() {
-		handleUpdateState(stats, setStats, 'level', +stats.level.value + 1)
+		handleUpdateState(
+			stats,
+			setStats,
+			'level',
+			stats.level.value < 98 ? +stats.level.value + 1 : stats.level.value
+		)
 		
 	}
 	function decreaseLevel() {
-		handleUpdateState(stats, setStats, 'level', +stats.level.value - 1)
+		handleUpdateState(
+			stats,
+			setStats,
+			'level',
+			stats.level.value > stats.level.init
+				? +stats.level.value - 1
+				: stats.level.value
+		)
 	}
-	//! APPLY LOGIC TO THE LEVELS
+	
 	const handleAdd = (state, setState, propertyName, value) => {
 		handleUpdateState(
 			state,
@@ -99,18 +111,13 @@ const Levels = ({
 			state,
 			setState,
 			propertyName,
-			init,
-			value > init ? +value - 1 : value
+			
+			value > init ? value -= 1 : value 
 		)
 		decreaseLevel()
 	}
-	//! WORK ON THIS SUBTRACTION METHOD
-	function subtract() {
-		setVigor((prevVigor) => ({
-			...prevVigor,
-			vig: prevVigor.vig === prevVigor.initVigor ? null : +prevVigor.vig - 1,
-		}))
-	}
+	
+	
 
 	return (
 		<div className="data-container border-2 border-accent-primary h-fit ">
@@ -126,7 +133,7 @@ const Levels = ({
 						{classList}
 					</select>
 				</div>
-				{/* <h3 className="font-bold text-white">{className}</h3> */}
+				
 				<div className="flex flex-col">
 					<span className="small-txt">Character Name</span>
 					<input className="dropdown-select" type="text" />
@@ -161,28 +168,60 @@ const Levels = ({
 						value={stats.mind.value}
 						initValue={stats.mind.init}
 						add={() => handleAdd(stats, setStats, 'mind', stats.mind.value)}
-						subtract={subtract}
+						subtract={() =>
+							handleSubtract(
+								stats,
+								setStats,
+								'mind',
+								stats.mind.init,
+								stats.mind.value
+							)
+						}
 						name={stats.mind.name}
 					/>
 					<Stat
 						value={stats.endurance.value}
 						initValue={stats.endurance.init}
 						add={() => handleAdd(stats, setStats, 'endurance', stats.endurance.value)}
-						subtract={subtract}
+						subtract={() =>
+							handleSubtract(
+								stats,
+								setStats,
+								'endurance',
+								stats.endurance.init,
+								stats.endurance.value
+							)
+						}
 						name={stats.endurance.name}
 					/>
 					<Stat
 						value={stats.strength.value}
 						initValue={stats.strength.init}
 						add={() => handleAdd(stats, setStats, 'strength', stats.strength.value)}
-						subtract={subtract}
+						subtract={() =>
+							handleSubtract(
+								stats,
+								setStats,
+								'strength',
+								stats.strength.init,
+								stats.strength.value
+							)
+						}
 						name={stats.strength.name}
 					/>
 					<Stat
 						value={stats.dexterity.value}
 						initValue={stats.dexterity.init}
 						add={() => handleAdd(stats, setStats, 'dexterity', stats.dexterity.value)}
-						subtract={subtract}
+						subtract={() =>
+							handleSubtract(
+								stats,
+								setStats,
+								'dexterity',
+								stats.dexterity.init,
+								stats.dexterity.value
+							)
+						}
 						name={stats.dexterity.name}
 					/>
 					<Stat
@@ -191,21 +230,45 @@ const Levels = ({
 						add={() =>
 							handleAdd(stats, setStats, 'intelligence', stats.intelligence.value)
 						}
-						subtract={subtract}
+						subtract={() =>
+							handleSubtract(
+								stats,
+								setStats,
+								'intelligence',
+								stats.intelligence.init,
+								stats.intelligence.value
+							)
+						}
 						name={stats.intelligence.name}
 					/>
 					<Stat
 						value={stats.faith.value}
 						initValue={stats.faith.init}
 						add={() => handleAdd(stats, setStats, 'faith', stats.faith.value)}
-						subtract={subtract}
+						subtract={() =>
+							handleSubtract(
+								stats,
+								setStats,
+								'faith',
+								stats.faith.init,
+								stats.faith.value
+							)
+						}
 						name={stats.faith.name}
 					/>
 					<Stat
 						value={stats.arcane.value}
 						initValue={stats.arcane.init}
 						add={() => handleAdd(stats, setStats, 'arcane', stats.arcane.value)}
-						subtract={subtract}
+						subtract={() =>
+							handleSubtract(
+								stats,
+								setStats,
+								'arcane',
+								stats.arcane.init,
+								stats.arcane.value
+							)
+						}
 						name={stats.arcane.name}
 					/>
 				</div>
@@ -214,7 +277,6 @@ const Levels = ({
 	)
 }
 
-// We need to apply some logic for out text to render
-//We also need to get our styling dialed in. I think this is something we should work on the second we get teh apiu calls working.{classData[0].name}
+
 
 export default Levels
