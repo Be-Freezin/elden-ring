@@ -39,5 +39,5 @@ const Talismans = ({ talismansData }) => {
 		</div>
 	)
 }
-
+//! WORK ON THE TALISMENS COMPONENTS
 export default Talismans

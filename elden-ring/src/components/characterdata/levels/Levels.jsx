@@ -3,55 +3,15 @@ import React from 'react'
 import Stat from './Stat'
 
 const Levels = ({
-	className,
+	stats,
+	setStats,
+
 	setClassName,
-	dexName,
-	initDex,
-	dex,
-	dexterity,
-	setDexterity,
-	arcaneName,
-	initArcane,
-	arc,
-	arcane,
-	setArcane,
-	endurName,
-	initEndurance,
-	endur,
-	endurance,
-	setEndurance,
-	faithName,
-	initFaith,
-	fth,
-	faith,
-	setFaith,
-	intName,
-	initInt,
-	intelligence,
-	int,
-	setIntelligence,
 
 	level,
 	setLevel,
-	mindName,
-	initMind,
-	mnd,
-	mind,
-	setMind,
-	strName,
-	initStrength,
-	str,
-	strength,
-	setStrength,
 
-	vigName,
-	vigor,
-	vig,
 	setVigor,
-	initVigor,
-
-	description,
-	classData,
 }) => {
 	const classChoices = [
 		{
@@ -106,29 +66,39 @@ const Levels = ({
 	function handleChange(event) {
 		setClassName(event.target.value)
 	}
-	function handleUpdateState(state, setState, property, value) {
+	function handleUpdateState(state, setState, propertyName, value) {
 		setState((prevState) => ({
 			...prevState,
-			[property]: value,
+
+			[propertyName]: {
+				...prevState[propertyName],
+				value,
+			},
 		}))
 	}
 	function increaseLevel() {
-		setLevel(+level + 1) 
-	}
-	function decreaseLevel() {
-		setLevel(+level - 1) 
-	}
-	//! APPLY LOGIC TO THE LEVELS
-	const handleAdd = (state, setState, property, value) => {
-		handleUpdateState(state, setState, property, value < 98 ? +value + 1 : value)
-		increaseLevel()
+		handleUpdateState(stats, setStats, 'level', +stats.level.value + 1)
 		
 	}
-	const handleSubtract = (state, setState, property, init, value) => {
+	function decreaseLevel() {
+		handleUpdateState(stats, setStats, 'level', +stats.level.value - 1)
+	}
+	//! APPLY LOGIC TO THE LEVELS
+	const handleAdd = (state, setState, propertyName, value) => {
 		handleUpdateState(
 			state,
 			setState,
-			property,
+			propertyName,
+
+			value < 98 ? +value + 1 : value
+		)
+		increaseLevel()
+	}
+	const handleSubtract = (state, setState, propertyName, init, value) => {
+		handleUpdateState(
+			state,
+			setState,
+			propertyName,
 			init,
 			value > init ? +value - 1 : value
 		)
@@ -141,7 +111,6 @@ const Levels = ({
 			vig: prevVigor.vig === prevVigor.initVigor ? null : +prevVigor.vig - 1,
 		}))
 	}
-	
 
 	return (
 		<div className="data-container border-2 border-accent-primary h-fit ">
@@ -162,7 +131,7 @@ const Levels = ({
 					<span className="small-txt">Character Name</span>
 					<input className="dropdown-select" type="text" />
 				</div>
-				<span className="text-white">Level : {level}</span>
+				<span className="text-white">Level : {stats.level.value}</span>
 			</div>
 
 			<div className="mt-6 text-white  h-96 px-2 py-4">
@@ -174,64 +143,70 @@ const Levels = ({
 				</div>
 				<div className="flex flex-col  justify-evenly h-full">
 					<Stat
-						value={vig}
-						name={vigName}
-						initValue={initVigor}
-						add={() => handleAdd(vigor, setVigor, 'vig', vigor.vig)}
+						value={stats.vigor.value}
+						name={stats.vigor.name}
+						initValue={stats.vigor.init}
+						add={() => handleAdd(stats, setStats, 'vigor', stats.vigor.value)}
 						subtract={() =>
-							handleSubtract(vigor, setVigor, 'vig', vigor.initVig, vigor.vig)
+							handleSubtract(
+								stats,
+								setStats,
+								'vigor',
+								stats.vigor.init,
+								stats.vigor.value
+							)
 						}
 					/>
 					<Stat
-						value={mnd}
-						initValue={initMind}
-						add={() => handleAdd(mind, setMind, 'mnd', mind.mnd)}
+						value={stats.mind.value}
+						initValue={stats.mind.init}
+						add={() => handleAdd(stats, setStats, 'mind', stats.mind.value)}
 						subtract={subtract}
-						name={mindName}
+						name={stats.mind.name}
 					/>
 					<Stat
-						value={endur}
-						initValue={initEndurance}
-						add={() => handleAdd(endurance, setEndurance, 'endur', endurance.endur)}
+						value={stats.endurance.value}
+						initValue={stats.endurance.init}
+						add={() => handleAdd(stats, setStats, 'endurance', stats.endurance.value)}
 						subtract={subtract}
-						name={endurName}
+						name={stats.endurance.name}
 					/>
 					<Stat
-						value={str}
-						initValue={initStrength}
-						add={() => handleAdd(strength, setStrength, 'str', strength.str)}
+						value={stats.strength.value}
+						initValue={stats.strength.init}
+						add={() => handleAdd(stats, setStats, 'strength', stats.strength.value)}
 						subtract={subtract}
-						name={strName}
+						name={stats.strength.name}
 					/>
 					<Stat
-						value={dex}
-						initValue={initDex}
-						add={() => handleAdd(dexterity, setDexterity, 'dex', dexterity.dex)}
+						value={stats.dexterity.value}
+						initValue={stats.dexterity.init}
+						add={() => handleAdd(stats, setStats, 'dexterity', stats.dexterity.value)}
 						subtract={subtract}
-						name={dexName}
+						name={stats.dexterity.name}
 					/>
 					<Stat
-						value={int}
-						initValue={initInt}
+						value={stats.intelligence.value}
+						initValue={stats.intelligence.init}
 						add={() =>
-							handleAdd(intelligence, setIntelligence, 'int', intelligence.int)
+							handleAdd(stats, setStats, 'intelligence', stats.intelligence.value)
 						}
 						subtract={subtract}
-						name={intName}
+						name={stats.intelligence.name}
 					/>
 					<Stat
-						value={fth}
-						initValue={initFaith}
-						add={() => handleAdd(faith, setFaith, 'fth', faith.fth)}
+						value={stats.faith.value}
+						initValue={stats.faith.init}
+						add={() => handleAdd(stats, setStats, 'faith', stats.faith.value)}
 						subtract={subtract}
-						name={faithName}
+						name={stats.faith.name}
 					/>
 					<Stat
-						value={arc}
-						initValue={initArcane}
-						add={() => handleAdd(arcane, setArcane, 'arc', arcane.arc)}
+						value={stats.arcane.value}
+						initValue={stats.arcane.init}
+						add={() => handleAdd(stats, setStats, 'arcane', stats.arcane.value)}
 						subtract={subtract}
-						name={arcaneName}
+						name={stats.arcane.name}
 					/>
 				</div>
 			</div>
