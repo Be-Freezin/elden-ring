@@ -55,7 +55,7 @@ const Gear = ({ armor, talismansData }) => {
 			<div className="md:flex-row md:justify-evenly  mobile-container">
 				<Talismans talismansData={talismansData} />
 			</div>
-			<div className="flex"></div>
+			
 		</div>
 	)
 }

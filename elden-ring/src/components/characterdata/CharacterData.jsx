@@ -30,6 +30,7 @@ const CharacterData = () => {
 
 	const [armorData, setArmorData] = useState([])
 	const [talismansData, setTalismansData] = useState([])
+	const [weaponData, setWeaponData] = useState([])
 	useEffect(() => {
 		fetchFromAPI(`classes?name=${className}`).then(({ data }) => {
 			setClassData(data.data[0].stats)
@@ -105,13 +106,27 @@ const CharacterData = () => {
 		fetchArmorData()
 	}, [])
 
-	console.log(talismansData)
+	
 	useEffect(() => {
 		fetchFromAPI(`talismans?limit=100`).then(({ data }) => {
 			setTalismansData(data.data)
 		})
 	}, [])
 
+	useEffect(() => {
+		let page = 0
+		const newWeapons = []
+		const fetchWeaponsData = async () => {
+			while (page < 5){
+				const { data } = await fetchFromAPI(`weapons?limit=100&page=${page}`)
+				newWeapons.push(...data.data)
+				page++
+			}
+			setWeaponData(newWeapons)
+		}
+		fetchWeaponsData()
+	}, [])
+console.log(weaponData)
 	return (
 		<div className="lg:flex-container-even mobile-container h-screen bg-black ">
 			<div className="mobile-container lg:flex-container-even h-screen bg-black">
