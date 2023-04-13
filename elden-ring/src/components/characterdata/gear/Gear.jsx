@@ -4,6 +4,7 @@ import ChestArmor from './ChestArmor'
 import LegArmor from './LegArmor'
 import HandArmor from './HandArmor'
 import Talismans from './Talismans'
+import Armor from './Armor'
 
 const Gear = ({ armor, talismansData }) => {
 	const helmArmor = armor.filter((item) => item.category === 'Helm')
@@ -42,14 +43,13 @@ const Gear = ({ armor, talismansData }) => {
 
 	return (
 		<div className="mobile-container md:data-container  border-2 border-accent-primary bg-black  p-2 ">
-			<div className="md:flex-row md:justify-evenly  mobile-container mt-6">
-				<HeadArmor helmList={helmList} />
-				<ChestArmor chestList={chestList} />
-			</div>
-			<div className="md:flex-row md:justify-evenly  mobile-container mt-6">
-				<LegArmor legList={legList} />
-				<HandArmor handList={handList} />
-			</div>
+			<Armor
+				helmList={helmList}
+				chestList={chestList}
+				legList={legList}
+				handList={handList}
+			/>
+			
 			{/* TALISMANS */}
 			<br />
 			<div className="md:flex-row md:justify-evenly  mobile-container">
