@@ -113,7 +113,7 @@ const CharacterData = () => {
 	}, [])
 
 	return (
-		<div className="lg:flex-container-even mobile-container  ">
+		<div className="lg:flex-container-even mobile-container h-screen bg-black ">
 			<div className="mobile-container lg:flex-container-even h-screen bg-black">
 				<Levels
 					stats={stats}
@@ -126,7 +126,7 @@ const CharacterData = () => {
 					description={description}
 				/>
 				<Gear armor={armorData} talismansData={talismansData} />
-				<Stats />
+				{/* <Stats /> */}
 			</div>
 		</div>
 	)
