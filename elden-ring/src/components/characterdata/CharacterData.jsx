@@ -126,7 +126,7 @@ const CharacterData = () => {
 		}
 		fetchWeaponsData()
 	}, [])
-console.log(weaponData)
+
 	return (
 		<div className="lg:flex-container-even mobile-container h-screen bg-black ">
 			<div className="mobile-container lg:flex-container-even h-screen bg-black">
@@ -140,7 +140,7 @@ console.log(weaponData)
 					setLevel={setLevel}
 					description={description}
 				/>
-				<Gear armor={armorData} talismansData={talismansData} />
+				<Gear armor={armorData} talismansData={talismansData} weapons={weaponData} />
 				{/* <Stats /> */}
 			</div>
 		</div>

@@ -7,7 +7,7 @@
     @apply flex flex-row justify-evenly items-center w-full  ;
   }
   .data-container{
-    @apply h-96 w-full;
+    @apply h-fit w-full;
   }
   .dropdown-select{
     @apply bg-black text-white border-white_muted border-b-2 w-72
