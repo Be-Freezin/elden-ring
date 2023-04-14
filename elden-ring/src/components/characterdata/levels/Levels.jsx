@@ -7,11 +7,6 @@ const Levels = ({
 	setStats,
 
 	setClassName,
-
-	level,
-	setLevel,
-
-	setVigor,
 }) => {
 	const classChoices = [
 		{
@@ -83,7 +78,6 @@ const Levels = ({
 			'level',
 			stats.level.value < 98 ? +stats.level.value + 1 : stats.level.value
 		)
-		
 	}
 	function decreaseLevel() {
 		handleUpdateState(
@@ -95,7 +89,7 @@ const Levels = ({
 				: stats.level.value
 		)
 	}
-	
+
 	const handleAdd = (state, setState, propertyName, value) => {
 		handleUpdateState(
 			state,
@@ -111,13 +105,11 @@ const Levels = ({
 			state,
 			setState,
 			propertyName,
-			
-			value > init ? value -= 1 : value 
+
+			value > init ? (value -= 1) : value
 		)
 		decreaseLevel()
 	}
-	
-	
 
 	return (
 		<div className="data-container border-2 border-accent-primary h-fit ">
@@ -133,7 +125,7 @@ const Levels = ({
 						{classList}
 					</select>
 				</div>
-				
+
 				<div className="flex flex-col">
 					<span className="small-txt">Character Name</span>
 					<input className="dropdown-select" type="text" />
@@ -276,7 +268,5 @@ const Levels = ({
 		</div>
 	)
 }
-
-
 
 export default Levels
