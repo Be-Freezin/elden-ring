@@ -128,8 +128,8 @@ const CharacterData = () => {
 	}, [])
 
 	return (
-		<div className="lg:flex-container-even mobile-container h-screen bg-black ">
-			<div className="mobile-container lg:flex-container-even h-screen bg-black">
+		<div className="lg:flex-container-even mobile-container h-full bg-black ">
+			<div className="mobile-container lg:flex-container-even  bg-black">
 				<Levels
 					stats={stats}
 					setStats={setStats}

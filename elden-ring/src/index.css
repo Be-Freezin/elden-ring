@@ -7,7 +7,7 @@
     @apply flex flex-row justify-evenly items-center w-full  ;
   }
   .data-container{
-    @apply h-full w-full;
+    @apply h-3/6 w-full flex flex-col justify-center;
   }
   .dropdown-select{
     @apply bg-black text-white border-white_muted border-b-2 w-72
@@ -16,6 +16,6 @@
     @apply text-sm text-white_muted
   }
   .mobile-container{
-    @apply flex flex-col h-fit
+    @apply flex flex-col h-fit  bg-black
   }
 }

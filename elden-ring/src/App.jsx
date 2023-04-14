@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import CharacterData from './components/characterdata/CharacterData'
+import Header from './components/header/Header'
 
 function App() {
 	const [count, setCount] = useState(0)
 
 	return (
-		<div className="App ">
-			<main className=' mobile-container  '>
+		<div className="App bg-black h-screen ">
+			<header className=" mobile-container  ">
+				<Header />
+			</header>
+			<main className=" mobile-container   ">
 				<CharacterData />
 			</main>
 		</div>

@@ -6,7 +6,7 @@ import HandArmor from './HandArmor'
 
 const Armor = ({ helmList, chestList, legList, handList }) => {
 	return (
-		<div>
+		<div className="">
 			<div className="md:flex-row md:justify-evenly  mobile-container mt-6">
 				<HeadArmor helmList={helmList} />
 				<ChestArmor chestList={chestList} />
