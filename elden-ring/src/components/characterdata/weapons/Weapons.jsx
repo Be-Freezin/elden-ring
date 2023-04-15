@@ -46,6 +46,7 @@ const Weapons = ({ weapons, stats }) => {
 					hover={hoverLeft1}
 					setHover={setHoverLeft1}
 					name={'Left Hand 1'}
+					stats={stats}
 					
 				/>
 

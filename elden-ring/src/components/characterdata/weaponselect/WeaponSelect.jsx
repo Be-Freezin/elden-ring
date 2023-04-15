@@ -6,10 +6,10 @@ const WeaponSelect = ({
 	selectedWeapon,
 	name,
 	hover,
-	setHover, 
+	setHover,
+	stats
 }) => {
-
-	
+console.log(stats)
 
 	return (
 		<>
@@ -25,34 +25,61 @@ const WeaponSelect = ({
 					{weaponsList}
 				</select>
 				<div
-					
 					className="w-32 h-6 relative"
 					onMouseEnter={() => setHover(true)}
 					onMouseLeave={() => setHover(false)}
 				>
 					{selectedWeapon && (
-						<span className="small-txt">
-							Req:{' '}
-							{selectedWeapon.requiredAttributes[0]
-								? selectedWeapon.requiredAttributes[0].amount
-								: 0}
-							/
-							{selectedWeapon.requiredAttributes[1]
-								? selectedWeapon.requiredAttributes[1].amount
-								: 0}
-							/
-							{selectedWeapon.requiredAttributes[2]
-								? selectedWeapon.requiredAttributes[2].amount
-								: 0}
-							/
-							{selectedWeapon.requiredAttributes[3]
-								? selectedWeapon.requiredAttributes[3].amount
-								: 0}
-							/
-							{selectedWeapon.requiredAttributes[4]
-								? selectedWeapon.requiredAttributes[4].amount
-								: 0}{' '}
-						</span>
+						<div>
+							{stats.strength.value < selectedWeapon.requiredAttributes[0].amount ||
+							stats.dexterity.value < selectedWeapon.requiredAttributes[1].amount? (
+								<span className="small-txt text-red">
+									Req:{' '}
+									{selectedWeapon.requiredAttributes[0]
+										? selectedWeapon.requiredAttributes[0].amount
+										: 0}
+									/
+									{selectedWeapon.requiredAttributes[1]
+										? selectedWeapon.requiredAttributes[1].amount
+										: 0}
+									/
+									{selectedWeapon.requiredAttributes[2]
+										? selectedWeapon.requiredAttributes[2].amount
+										: 0}
+									/
+									{selectedWeapon.requiredAttributes[3]
+										? selectedWeapon.requiredAttributes[3].amount
+										: 0}
+									/
+									{selectedWeapon.requiredAttributes[4]
+										? selectedWeapon.requiredAttributes[4].amount
+										: 0}{' '}
+								</span>
+							) : (
+								<span className="small-txt">
+									Req:{' '}
+									{selectedWeapon.requiredAttributes[0]
+										? selectedWeapon.requiredAttributes[0].amount
+										: 0}
+									/
+									{selectedWeapon.requiredAttributes[1]
+										? selectedWeapon.requiredAttributes[1].amount
+										: 0}
+									/
+									{selectedWeapon.requiredAttributes[2]
+										? selectedWeapon.requiredAttributes[2].amount
+										: 0}
+									/
+									{selectedWeapon.requiredAttributes[3]
+										? selectedWeapon.requiredAttributes[3].amount
+										: 0}
+									/
+									{selectedWeapon.requiredAttributes[4]
+										? selectedWeapon.requiredAttributes[4].amount
+										: 0}{' '}
+								</span>
+							)}
+						</div>
 					)}
 					{/* {hover && (
 						<div className="w-44 h-fit bg-accent-primary absolute top-8 rounded-md z-50">

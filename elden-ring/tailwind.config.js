@@ -3,12 +3,13 @@ export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		extend: {
-			height:{
-				'100': '62rem'
-			}
+			height: {
+				100: '62rem',
+			},
 		},
 		colors: {
 			black: '#151614',
+			red: '#EF3C5A',
 			black_mute: '#292B27',
 			'black-alt': '#161514',
 			white: '#FFFFEF',
