@@ -140,7 +140,8 @@ const CharacterData = () => {
 					setLevel={setLevel}
 					description={description}
 				/>
-				<Gear armor={armorData} talismansData={talismansData} weapons={weaponData} />
+				<Gear armor={armorData} talismansData={talismansData} weapons={weaponData}
+				stats={stats} />
 				{/* <Stats /> */}
 			</div>
 		</div>
