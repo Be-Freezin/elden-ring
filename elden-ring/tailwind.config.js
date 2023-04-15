@@ -13,5 +13,34 @@ export default {
 			'accent-primary': '#D9A566',
 		},
 	},
-	plugins: [],
+	plugins: [require('daisyui')],
+	daisyui: {
+		themes: [
+			{
+				mytheme: {
+					primary: '#0B2626',
+
+					secondary: '#15403B',
+
+					accent: '#D9A566',
+
+					neutral: '#151614',
+
+					'base-100': '#151614',
+
+					white: '#FFFFEF',
+					
+					white_muted: '#B1B1A0',
+
+					info: '#3ABFF8',
+
+					success: '#36D399',
+
+					warning: '#FBBD23',
+
+					error: '#F87272',
+				},
+			},
+		],
+	},
 }

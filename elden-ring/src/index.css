@@ -12,10 +12,36 @@
   .dropdown-select{
     @apply bg-black text-white border-white_muted border-b-2 w-72
   }
+  .daisy-select{
+    @apply select w-full max-w-xs text-accent-primary
+    bg-black
+  }
   .small-txt{
     @apply text-sm text-white_muted
   }
   .mobile-container{
     @apply flex flex-col h-fit  bg-black
   }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #3b3937;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #B1B1A0;
+    border-radius: 100vh;
+    border: 2px solid #B1B1A0;
+  }
+
+  /* .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #c0a0b9;
+  } */
 }

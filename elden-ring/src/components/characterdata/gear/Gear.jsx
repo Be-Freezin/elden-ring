@@ -11,7 +11,7 @@ const Gear = ({ armor, talismansData, weapons }) => {
 
 	const helmList = helmArmor.map((item, id) => {
 		return (
-			<option className="text-white" key={id} value={item.name}>
+			<option className="text-accent-primary" key={id} value={item.name}>
 				{item.name}
 			</option>
 		)
