@@ -15,7 +15,7 @@ const WeaponSelect = ({ weaponsList, handleSelectChange, selectedWeapon, name}) 
 						{weaponsList}
 					</select>
 					<div
-						className="w-32 relative"
+						className="w-32 h-6 relative"
 						onMouseEnter={() => setHover(true)}
 						onMouseLeave={() => setHover(false)}
 					>

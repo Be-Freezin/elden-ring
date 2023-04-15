@@ -6,7 +6,7 @@ const HeadArmor = ({ helmList }) => {
 			<div className="flex flex-col">
 				<span className="small-txt">Head Armor</span>
 				<select
-					className="dropdown-select"
+					className="daisy-select scrollbar"
 					name="armorList"
 					id="armorList"
 					placeholder="Head Armor"
