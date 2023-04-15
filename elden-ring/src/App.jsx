@@ -7,7 +7,7 @@ function App() {
 
 	return (
 		<div className="App bg-black h-screen ">
-			<header className=" mobile-container  ">
+			<header className=" mobile-container md:flex-container-even   ">
 				<Header />
 			</header>
 			<main className=" mobile-container   ">

@@ -2,11 +2,11 @@ import React from 'react'
 
 const Header = () => {
   return (
-			<div className="h-72  flex flex-col justify-center items-center">
-				<div className=" text-white text-center flex flex-col justify-center items-center w-1/2">
-					<h1 className="text-4xl text-white text-center">Welcome Tarnished</h1>
+			<div className=" p-12 flex flex-col justify-center items-center">
+				<div className=" text-white text-center flex flex-col justify-center items-center w-4/6 lg:max-w-2xl">
+					<h1 className="text-4xl py-6 text-white text-center">Welcome Tarnished</h1>
 					<p>
-						Welcome Tarnished, to the world of Elden Ring. The lands between are vast
+						The lands between are vast
 						and perilous, and only the strongest and most cunning will survive. As you
 						embark on your journey, carefully planning your build and mastering your
 						combat skills will be critical for triumph. So arm yourself with your

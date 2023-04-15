@@ -112,8 +112,8 @@ const Levels = ({
 	}
 
 	return (
-		<div className="data-container border-2 border-theme-secondary h-auto ">
-			<div className="flex flex-col px-2 justify-evenly h-56">
+		<div className="md:data-container border-2 border-theme-secondary  ">
+			<div className="flex flex-col px-2 justify-evenly h-56 ">
 				<div className="flex flex-col">
 					<span className="small-txt-label">Starting Class</span>
 					<select

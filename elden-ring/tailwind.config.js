@@ -2,7 +2,11 @@
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			height:{
+				'100': '62rem'
+			}
+		},
 		colors: {
 			black: '#151614',
 			black_mute: '#292B27',

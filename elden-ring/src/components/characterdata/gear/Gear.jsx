@@ -39,7 +39,7 @@ const Gear = ({ armor, talismansData, weapons }) => {
 	})
 
 	return (
-		<div className="mobile-container md:data-container  border-2 border-theme-secondary bg-black flex items-center md:items-stretch h-auto  p-2 ">
+		<div className="mobile-container md:data-container  border-2 border-theme-secondary bg-black flex items-center md:items-stretch  min-h-full p-2 ">
 			<Armor
 				helmList={helmList}
 				chestList={chestList}
