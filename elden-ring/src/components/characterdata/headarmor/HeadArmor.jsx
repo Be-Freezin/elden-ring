@@ -4,9 +4,9 @@ const HeadArmor = ({ helmList }) => {
 	return (
 		<div>
 			<div className="flex flex-col">
-				<span className="small-txt">Head Armor</span>
+				<span className="small-txt-label">Head Armor</span>
 				<select
-					className="daisy-select scrollbar"
+					className="daisy-select "
 					name="armorList"
 					id="armorList"
 					placeholder="Head Armor"

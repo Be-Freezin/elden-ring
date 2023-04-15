@@ -4,9 +4,9 @@ const WeaponSelect = ({ weaponsList, handleSelectChange, selectedWeapon, name}) 
   return (
 			<>
 				<div className="flex flex-col ">
-					<span className="small-txt">{name}</span>
+					<span className="small-txt-label">{name}</span>
 					<select
-						className="dropdown-select"
+						className="daisy-select"
 						name="weaponsList"
 						id="weaponsList"
 						onChange={handleSelectChange}

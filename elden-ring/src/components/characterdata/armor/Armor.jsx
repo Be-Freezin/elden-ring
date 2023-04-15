@@ -1,8 +1,8 @@
 import React from 'react'
-import HeadArmor from './HeadArmor'
-import ChestArmor from './ChestArmor'
-import LegArmor from './LegArmor'
-import HandArmor from './HandArmor'
+import HeadArmor from '../headarmor/HeadArmor'
+import ChestArmor from '../chestarmor/ChestArmor'
+import LegArmor from '../legarmor/LegArmor'
+import HandArmor from '../handarmor/HandArmor'
 
 const Armor = ({ helmList, chestList, legList, handList }) => {
 	return (

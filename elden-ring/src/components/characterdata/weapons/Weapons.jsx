@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import WeaponSelect from './WeaponSelect'
+import WeaponSelect from '../weaponselect/WeaponSelect'
 
 const Weapons = ({ weapons }) => {
 	const [selectedWeapon, setSelectedWeapon] = useState(null)
@@ -35,14 +35,13 @@ const Weapons = ({ weapons }) => {
 					selectedWeapon={selectedWeaponLeft1}
 					name={'Left Hand 1'}
 				/>
-				
+
 				<WeaponSelect
 					weaponsList={weaponsList}
 					handleSelectChange={(e) => handleSelectChange(e, setSelectedWeaponRight1)}
 					selectedWeapon={selectedWeaponRight1}
 					name={'Right Hand 1'}
 				/>
-			
 			</div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
 				<WeaponSelect
@@ -51,14 +50,13 @@ const Weapons = ({ weapons }) => {
 					selectedWeapon={selectedWeaponLeft2}
 					name={'Left Hand 2'}
 				/>
-				
+
 				<WeaponSelect
 					weaponsList={weaponsList}
 					handleSelectChange={(e) => handleSelectChange(e, setSelectedWeaponRight2)}
 					selectedWeapon={selectedWeaponRight2}
 					name={'Right Hand 2'}
 				/>
-			
 			</div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
 				<WeaponSelect
@@ -67,14 +65,13 @@ const Weapons = ({ weapons }) => {
 					selectedWeapon={selectedWeaponLeft3}
 					name={'Left Hand 3'}
 				/>
-				
+
 				<WeaponSelect
 					weaponsList={weaponsList}
 					handleSelectChange={(e) => handleSelectChange(e, setSelectedWeaponRight3)}
 					selectedWeapon={selectedWeaponRight3}
 					name={'Right Hand 3'}
 				/>
-			
 			</div>
 		</div>
 	)

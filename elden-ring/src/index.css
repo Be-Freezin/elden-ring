@@ -7,20 +7,31 @@
     @apply flex flex-row justify-evenly items-center w-full  ;
   }
   .data-container{
-    @apply h-3/6 w-full flex flex-col justify-center;
+    @apply h-3/6 w-full flex flex-col justify-center bg-black;
   }
   .dropdown-select{
     @apply bg-black text-white border-white_muted border-b-2 w-72
   }
   .daisy-select{
-    @apply select w-full max-w-xs text-accent-primary
-    bg-black
+    @apply select select-ghost rounded-md p-2 bg-black_mute text-white border-b-2 w-72 scrollbar
+  }
+  .daisy-input{
+    @apply input input-bordered input-secondary  rounded-md w-72
+  }
+  .number-input{
+    @apply w-10 text-center bg-black border-2 border-theme-secondary rounded-md
+  }
+  .option-hover{
+    @apply hover:bg-white_muted
   }
   .small-txt{
-    @apply text-sm text-white_muted
+    @apply text-sm text-white_muted py-1
+  }
+  .small-txt-label{
+    @apply text-sm text-white_muted p-1 
   }
   .mobile-container{
-    @apply flex flex-col h-fit  bg-black
+    @apply flex flex-col h-fit  
   }
 }
 

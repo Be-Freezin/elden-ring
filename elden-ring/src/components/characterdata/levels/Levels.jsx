@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Stat from './Stat'
+import Stat from '../stat/Stat'
 
 const Levels = ({
 	stats,
@@ -112,12 +112,12 @@ const Levels = ({
 	}
 
 	return (
-		<div className="data-container border-2 border-accent-primary h-auto ">
+		<div className="data-container border-2 border-theme-secondary h-auto ">
 			<div className="flex flex-col px-2 justify-evenly h-56">
 				<div className="flex flex-col">
-					<span className="small-txt">Starting Class</span>
+					<span className="small-txt-label">Starting Class</span>
 					<select
-						className="dropdown-select"
+						className="daisy-select"
 						onChange={handleChange}
 						name="classList"
 						id="classList"
@@ -128,7 +128,7 @@ const Levels = ({
 
 				<div className="flex flex-col">
 					<span className="small-txt">Character Name</span>
-					<input className="dropdown-select" type="text" />
+					<input className="daisy-input" type="text" />
 				</div>
 				<span className="text-white">Level : {stats.level.value}</span>
 			</div>

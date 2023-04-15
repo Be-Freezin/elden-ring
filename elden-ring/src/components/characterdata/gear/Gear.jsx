@@ -1,7 +1,7 @@
 import React from 'react'
-import Weapons from './Weapons'
-import Talismans from './Talismans'
-import Armor from './Armor'
+import Weapons from '../weapons/Weapons'
+import Talismans from '../talismans/Talismans'
+import Armor from '../armor/Armor'
 
 const Gear = ({ armor, talismansData, weapons }) => {
 	const helmArmor = armor.filter((item) => item.category === 'Helm')
@@ -11,7 +11,7 @@ const Gear = ({ armor, talismansData, weapons }) => {
 
 	const helmList = helmArmor.map((item, id) => {
 		return (
-			<option className="text-accent-primary" key={id} value={item.name}>
+			<option className="text-white " key={id} value={item.name}>
 				{item.name}
 			</option>
 		)
@@ -39,7 +39,7 @@ const Gear = ({ armor, talismansData, weapons }) => {
 	})
 
 	return (
-		<div className="mobile-container md:data-container  border-2 border-accent-primary bg-black flex items-center md:items-stretch h-auto  p-2 ">
+		<div className="mobile-container md:data-container  border-2 border-theme-secondary bg-black flex items-center md:items-stretch h-auto  p-2 ">
 			<Armor
 				helmList={helmList}
 				chestList={chestList}
@@ -49,10 +49,12 @@ const Gear = ({ armor, talismansData, weapons }) => {
 
 			{/* TALISMANS */}
 			<br />
+			<hr className="w-1/2 mx-auto text-white_muted" />
 			<div className="md:flex-row md:justify-evenly  mobile-container">
 				<Talismans talismansData={talismansData} />
 			</div>
 			<br />
+			<hr className="w-1/2 mx-auto text-white_muted" />
 			<Weapons weapons={weapons} />
 		</div>
 	)

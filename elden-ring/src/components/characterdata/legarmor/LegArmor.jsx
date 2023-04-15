@@ -4,9 +4,9 @@ const LegArmor = ({legList}) => {
   return (
 			<div>
 				<div className="flex flex-col">
-					<span className="small-txt">Leg Armor</span>
+					<span className="small-txt-label">Leg Armor</span>
 					<select
-						className="dropdown-select"
+						className="daisy-select"
 						name="armorList"
 						id="armorList"
 						placeholder="Head Armor"

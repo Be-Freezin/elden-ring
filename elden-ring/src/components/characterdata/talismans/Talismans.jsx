@@ -10,12 +10,12 @@ const Talismans = ({ talismansData }) => {
 	})
 
 	return (
-		<div className='w-full '>
+		<div className="w-full ">
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
 				<div className="flex flex-col ">
-					<span className="small-txt">Talisman 1</span>
+					<span className="small-txt-label">Talisman 1</span>
 					<select
-						className="dropdown-select"
+						className="daisy-select"
 						name="armorList"
 						id="armorList"
 						placeholder="Chest Armor"
@@ -24,9 +24,9 @@ const Talismans = ({ talismansData }) => {
 					</select>
 				</div>
 				<div className="flex flex-col">
-					<span className="small-txt">Talisman 2</span>
+					<span className="small-txt-label">Talisman 2</span>
 					<select
-						className="dropdown-select"
+						className="daisy-select"
 						name="armorList"
 						id="armorList"
 						placeholder="Chest Armor"
@@ -37,9 +37,9 @@ const Talismans = ({ talismansData }) => {
 			</div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
 				<div className="flex flex-col ">
-					<span className="small-txt">Talisman 3</span>
+					<span className="small-txt-label">Talisman 3</span>
 					<select
-						className="dropdown-select"
+						className="daisy-select"
 						name="armorList"
 						id="armorList"
 						placeholder="Chest Armor"
@@ -48,9 +48,9 @@ const Talismans = ({ talismansData }) => {
 					</select>
 				</div>
 				<div className="flex flex-col">
-					<span className="small-txt">Talisman 4</span>
+					<span className="small-txt-label">Talisman 4</span>
 					<select
-						className="dropdown-select"
+						className="daisy-select"
 						name="armorList"
 						id="armorList"
 						placeholder="Chest Armor"

@@ -5,6 +5,7 @@ export default {
 		extend: {},
 		colors: {
 			black: '#151614',
+			black_mute: '#292B27',
 			'black-alt': '#161514',
 			white: '#FFFFEF',
 			white_muted: '#B1B1A0',
@@ -29,7 +30,7 @@ export default {
 					'base-100': '#151614',
 
 					white: '#FFFFEF',
-					
+
 					white_muted: '#B1B1A0',
 
 					info: '#3ABFF8',

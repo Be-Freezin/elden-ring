@@ -4,13 +4,12 @@ const ChestArmor = ({ chestList }) => {
 	return (
 		<div>
 			<div className="flex flex-col">
-				<span className="small-txt">Chest Armor</span>
+				<span className="small-txt-label">Chest Armor</span>
 				<select
-					className="dropdown-select"
+					className="daisy-select"
 					name="armorList"
 					id="armorList"
 					placeholder="Chest Armor"
-					
 				>
 					{chestList}
 				</select>
