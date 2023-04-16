@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import WeaponSelect from '../weaponselect/WeaponSelect'
 
-const Weapons = ({ weapons, stats }) => {
+const Weapons = ({ weapons, stats, ashes }) => {
 	const [selectedWeapon, setSelectedWeapon] = useState(null)
 	const [selectedWeaponLeft1, setSelectedWeaponLeft1] = useState(null)
 	const [selectedWeaponLeft2, setSelectedWeaponLeft2] = useState(null)
@@ -17,15 +17,11 @@ const Weapons = ({ weapons, stats }) => {
 	const [hoverRight2, setHoverRight2] = useState(false)
 	const [hoverRight3, setHoverRight3] = useState(false)
 
-
-
 	//! WORK ON THE WEAPON STATE
 	const handleSelectChange = (event, setSelectedWeapon) => {
 		const selectedIndex = event.target.selectedIndex
 		setSelectedWeapon(weapons[selectedIndex])
 	}
-
-
 
 	const weaponsList = weapons.map((item, id) => {
 		return (
@@ -34,8 +30,15 @@ const Weapons = ({ weapons, stats }) => {
 			</option>
 		)
 	})
+	  const ashesList = ashes.map((item, id) => {
+				return (
+					<option className="text-white" value={item.name} key={id}>
+						{item.name}
+					</option>
+				)
+			})
 
-	// console.log(selectedWeapon)
+	console.log(ashes)
 	return (
 		<div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
@@ -47,7 +50,7 @@ const Weapons = ({ weapons, stats }) => {
 					setHover={setHoverLeft1}
 					name={'Left Hand 1'}
 					stats={stats}
-					
+					ashesList={ashesList}
 				/>
 
 				<WeaponSelect
@@ -57,7 +60,8 @@ const Weapons = ({ weapons, stats }) => {
 					hover={hoverRight1}
 					setHover={setHoverRight1}
 					name={'Right Hand 1'}
-					
+					stats={stats}
+					ashesList={ashesList}
 				/>
 			</div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
@@ -68,7 +72,8 @@ const Weapons = ({ weapons, stats }) => {
 					hover={hoverLeft2}
 					setHover={setHoverLeft2}
 					name={'Left Hand 2'}
-					
+					stats={stats}
+					ashesList={ashesList}
 				/>
 
 				<WeaponSelect
@@ -78,7 +83,8 @@ const Weapons = ({ weapons, stats }) => {
 					hover={hoverRight2}
 					setHover={setHoverRight2}
 					name={'Right Hand 2'}
-					
+					stats={stats}
+					ashesList={ashesList}
 				/>
 			</div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
@@ -89,7 +95,8 @@ const Weapons = ({ weapons, stats }) => {
 					hover={hoverLeft3}
 					setHover={setHoverLeft3}
 					name={'Left Hand 3'}
-					
+					stats={stats}
+					ashesList={ashesList}
 				/>
 
 				<WeaponSelect
@@ -99,7 +106,8 @@ const Weapons = ({ weapons, stats }) => {
 					hover={hoverRight3}
 					setHover={setHoverRight3}
 					name={'Right Hand 3'}
-					
+					stats={stats}
+					ashesList={ashesList}
 				/>
 			</div>
 		</div>

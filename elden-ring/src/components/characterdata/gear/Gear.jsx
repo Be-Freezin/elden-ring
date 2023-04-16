@@ -3,7 +3,7 @@ import Weapons from '../weapons/Weapons'
 import Talismans from '../talismans/Talismans'
 import Armor from '../armor/Armor'
 
-const Gear = ({ armor, talismansData, weapons, stats }) => {
+const Gear = ({ armor, talismansData, weapons, stats, ashes }) => {
 	const helmArmor = armor.filter((item) => item.category === 'Helm')
 	const chestArmor = armor.filter((item) => item.category === 'Chest Armor')
 	const legArmor = armor.filter((item) => item.category === 'Leg Armor')
@@ -55,7 +55,7 @@ const Gear = ({ armor, talismansData, weapons, stats }) => {
 			</div>
 			<br />
 			<hr className="w-1/2 mx-auto text-white_muted" />
-			<Weapons weapons={weapons} stats={stats} />
+			<Weapons weapons={weapons} stats={stats} ashes={ashes} />
 		</div>
 	)
 }

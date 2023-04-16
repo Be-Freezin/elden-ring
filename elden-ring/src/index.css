@@ -15,6 +15,9 @@
   .daisy-select{
     @apply select select-ghost rounded-md p-2 bg-black_mute text-white border-b-2 w-72 scrollbar
   }
+  .daisy-select-ashes{
+    @apply select select-ghost rounded-md p-2 bg-theme-primary text-white border-b-2 w-72 scrollbar
+  }
   .daisy-input{
     @apply input input-bordered input-secondary  rounded-md w-72
   }

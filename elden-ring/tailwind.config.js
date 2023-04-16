@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			height: {
-				100: '62rem',
+				100: '72rem',
 			},
 		},
 		colors: {

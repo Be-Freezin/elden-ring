@@ -1,4 +1,5 @@
 import React from 'react'
+import Ashes from '../ashes/Ashes'
 
 const WeaponSelect = ({
 	weaponsList,
@@ -7,13 +8,13 @@ const WeaponSelect = ({
 	name,
 	hover,
 	setHover,
-	stats
+	stats, ashesList
 }) => {
 console.log(stats)
 
 	return (
 		<>
-			<div className="flex flex-col ">
+			<div className="flex flex-col my-6 ">
 				<span className="small-txt-label">{name}</span>
 				<select
 					className="daisy-select"
@@ -81,6 +82,7 @@ console.log(stats)
 							)}
 						</div>
 					)}
+					<Ashes ashesList={ashesList} />
 					{/* {hover && (
 						<div className="w-44 h-fit bg-accent-primary absolute top-8 rounded-md z-50">
 							<span className="small-txt text-black">Weapon Requirements</span>
