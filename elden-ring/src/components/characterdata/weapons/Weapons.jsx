@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import WeaponSelect from '../weaponselect/WeaponSelect'
+import Ashes from '../ashes/Ashes'
 
 const Weapons = ({ weapons, stats, ashes }) => {
 	const [selectedWeapon, setSelectedWeapon] = useState(null)
@@ -30,85 +31,106 @@ const Weapons = ({ weapons, stats, ashes }) => {
 			</option>
 		)
 	})
-	  const ashesList = ashes.map((item, id) => {
-				return (
-					<option className="text-white" value={item.name} key={id}>
-						{item.name}
-					</option>
-				)
-			})
+	const ashesList = ashes.map((item, id) => {
+		return (
+			<option className="text-white" value={item.name} key={id}>
+				{item.name}
+			</option>
+		)
+	})
 
 	console.log(ashes)
 	return (
 		<div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
-				<WeaponSelect
-					weaponsList={weaponsList}
-					handleSelectChange={(e) => handleSelectChange(e, setSelectedWeaponLeft1)}
-					selectedWeapon={selectedWeaponLeft1}
-					hover={hoverLeft1}
-					setHover={setHoverLeft1}
-					name={'Left Hand 1'}
-					stats={stats}
-					ashesList={ashesList}
-				/>
-
-				<WeaponSelect
-					weaponsList={weaponsList}
-					handleSelectChange={(e) => handleSelectChange(e, setSelectedWeaponRight1)}
-					selectedWeapon={selectedWeaponRight1}
-					hover={hoverRight1}
-					setHover={setHoverRight1}
-					name={'Right Hand 1'}
-					stats={stats}
-					ashesList={ashesList}
-				/>
+				<div>
+					<WeaponSelect
+						weaponsList={weaponsList}
+						handleSelectChange={(e) =>
+							handleSelectChange(e, setSelectedWeaponLeft1)
+						}
+						selectedWeapon={selectedWeaponLeft1}
+						hover={hoverLeft1}
+						setHover={setHoverLeft1}
+						name={'Left Hand 1'}
+						stats={stats}
+					/>
+					<Ashes ashesList={ashesList} />
+				</div>
+				<div>
+					<WeaponSelect
+						weaponsList={weaponsList}
+						handleSelectChange={(e) =>
+							handleSelectChange(e, setSelectedWeaponRight1)
+						}
+						selectedWeapon={selectedWeaponRight1}
+						hover={hoverRight1}
+						setHover={setHoverRight1}
+						name={'Right Hand 1'}
+						stats={stats}
+					/>
+					<Ashes ashesList={ashesList} />
+				</div>
 			</div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
-				<WeaponSelect
-					weaponsList={weaponsList}
-					handleSelectChange={(e) => handleSelectChange(e, setSelectedWeaponLeft2)}
-					selectedWeapon={selectedWeaponLeft2}
-					hover={hoverLeft2}
-					setHover={setHoverLeft2}
-					name={'Left Hand 2'}
-					stats={stats}
-					ashesList={ashesList}
-				/>
-
-				<WeaponSelect
-					weaponsList={weaponsList}
-					handleSelectChange={(e) => handleSelectChange(e, setSelectedWeaponRight2)}
-					selectedWeapon={selectedWeaponRight2}
-					hover={hoverRight2}
-					setHover={setHoverRight2}
-					name={'Right Hand 2'}
-					stats={stats}
-					ashesList={ashesList}
-				/>
+				<div>
+					<WeaponSelect
+						weaponsList={weaponsList}
+						handleSelectChange={(e) =>
+							handleSelectChange(e, setSelectedWeaponLeft2)
+						}
+						selectedWeapon={selectedWeaponLeft2}
+						hover={hoverLeft2}
+						setHover={setHoverLeft2}
+						name={'Left Hand 2'}
+						stats={stats}
+					/>
+					<Ashes ashesList={ashesList} />
+				</div>
+				<div>
+					<WeaponSelect
+						weaponsList={weaponsList}
+						handleSelectChange={(e) =>
+							handleSelectChange(e, setSelectedWeaponRight2)
+						}
+						selectedWeapon={selectedWeaponRight2}
+						hover={hoverRight2}
+						setHover={setHoverRight2}
+						name={'Right Hand 2'}
+						stats={stats}
+					/>
+					<Ashes ashesList={ashesList} />
+				</div>
 			</div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
-				<WeaponSelect
-					weaponsList={weaponsList}
-					handleSelectChange={(e) => handleSelectChange(e, setSelectedWeaponLeft3)}
-					selectedWeapon={selectedWeaponLeft3}
-					hover={hoverLeft3}
-					setHover={setHoverLeft3}
-					name={'Left Hand 3'}
-					stats={stats}
-					ashesList={ashesList}
-				/>
-
-				<WeaponSelect
-					weaponsList={weaponsList}
-					handleSelectChange={(e) => handleSelectChange(e, setSelectedWeaponRight3)}
-					selectedWeapon={selectedWeaponRight3}
-					hover={hoverRight3}
-					setHover={setHoverRight3}
-					name={'Right Hand 3'}
-					stats={stats}
-					ashesList={ashesList}
-				/>
+				<div>
+					<WeaponSelect
+						weaponsList={weaponsList}
+						handleSelectChange={(e) =>
+							handleSelectChange(e, setSelectedWeaponLeft3)
+						}
+						selectedWeapon={selectedWeaponLeft3}
+						hover={hoverLeft3}
+						setHover={setHoverLeft3}
+						name={'Left Hand 3'}
+						stats={stats}
+					/>
+					<Ashes ashesList={ashesList} />
+				</div>
+				<div>
+					<WeaponSelect
+						weaponsList={weaponsList}
+						handleSelectChange={(e) =>
+							handleSelectChange(e, setSelectedWeaponRight3)
+						}
+						selectedWeapon={selectedWeaponRight3}
+						hover={hoverRight3}
+						setHover={setHoverRight3}
+						name={'Right Hand 3'}
+						stats={stats}
+					/>
+					<Ashes ashesList={ashesList} />
+				</div>
 			</div>
 		</div>
 	)

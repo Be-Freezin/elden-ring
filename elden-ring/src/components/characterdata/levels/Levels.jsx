@@ -112,7 +112,7 @@ const Levels = ({
 	}
 
 	return (
-		<div className="md:data-container border-2 border-theme-secondary  ">
+		<div className="h-fit lg:data-container border-2 border-theme-secondary  ">
 			<div className="flex flex-col px-2 justify-evenly h-56 ">
 				<div className="flex flex-col">
 					<span className="small-txt-label">Starting Class</span>
@@ -174,7 +174,9 @@ const Levels = ({
 					<Stat
 						value={stats.endurance.value}
 						initValue={stats.endurance.init}
-						add={() => handleAdd(stats, setStats, 'endurance', stats.endurance.value)}
+						add={() =>
+							handleAdd(stats, setStats, 'endurance', stats.endurance.value)
+						}
 						subtract={() =>
 							handleSubtract(
 								stats,
@@ -189,7 +191,9 @@ const Levels = ({
 					<Stat
 						value={stats.strength.value}
 						initValue={stats.strength.init}
-						add={() => handleAdd(stats, setStats, 'strength', stats.strength.value)}
+						add={() =>
+							handleAdd(stats, setStats, 'strength', stats.strength.value)
+						}
 						subtract={() =>
 							handleSubtract(
 								stats,
@@ -204,7 +208,9 @@ const Levels = ({
 					<Stat
 						value={stats.dexterity.value}
 						initValue={stats.dexterity.init}
-						add={() => handleAdd(stats, setStats, 'dexterity', stats.dexterity.value)}
+						add={() =>
+							handleAdd(stats, setStats, 'dexterity', stats.dexterity.value)
+						}
 						subtract={() =>
 							handleSubtract(
 								stats,
@@ -220,7 +226,12 @@ const Levels = ({
 						value={stats.intelligence.value}
 						initValue={stats.intelligence.init}
 						add={() =>
-							handleAdd(stats, setStats, 'intelligence', stats.intelligence.value)
+							handleAdd(
+								stats,
+								setStats,
+								'intelligence',
+								stats.intelligence.value
+							)
 						}
 						subtract={() =>
 							handleSubtract(

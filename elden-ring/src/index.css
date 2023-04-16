@@ -2,60 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-  .flex-container-even {
-    @apply flex flex-row justify-evenly items-center w-full  ;
-  }
-  .data-container{
-    @apply h-100 w-full flex flex-col justify-start bg-black;
-  }
-  .dropdown-select{
-    @apply bg-black text-white border-white_muted border-b-2 w-72
-  }
-  .daisy-select{
-    @apply select select-ghost rounded-md p-2 bg-black_mute text-white border-b-2 w-72 scrollbar
-  }
-  .daisy-select-ashes{
-    @apply select select-ghost rounded-md p-2 bg-theme-primary text-white border-b-2 w-72 scrollbar
-  }
-  .daisy-input{
-    @apply input input-bordered input-secondary  rounded-md w-72
-  }
-  .number-input{
-    @apply w-10 text-center bg-black border-2 border-theme-secondary rounded-md
-  }
-  .option-hover{
-    @apply hover:bg-white_muted
-  }
-  .small-txt{
-    @apply text-sm text-white_muted py-1
-  }
-  .small-txt-label{
-    @apply text-sm text-white_muted p-1 
-  }
-  .mobile-container{
-    @apply flex flex-col justify-center  
-  }
+@layer components {
+	.flex-container-even {
+		@apply flex flex-row justify-evenly items-center w-full;
+	}
+	.data-container {
+		@apply h-100 w-full flex flex-col justify-start bg-black;
+	}
+	.level-container {
+		@apply h-fit w-full flex flex-col justify-start bg-black;
+	}
+
+	.daisy-select {
+		@apply select select-ghost rounded-md p-2 bg-black_mute text-white border-b-2 w-72 scrollbar;
+	}
+	.daisy-select-ashes {
+		@apply select select-ghost rounded-md p-2 bg-theme-primary text-white border-b-2 w-72 scrollbar;
+	}
+	.daisy-input {
+		@apply input input-bordered input-secondary  rounded-md w-72;
+	}
+	.number-input {
+		@apply w-10 text-center bg-black border-2 border-theme-secondary rounded-md;
+	}
+	.option-hover {
+		@apply hover:bg-white_muted;
+	}
+	.small-txt {
+		@apply text-sm text-white_muted py-1;
+	}
+	.small-txt-label {
+		@apply text-sm text-white_muted p-1;
+	}
+	.mobile-container {
+		@apply flex flex-col justify-center;
+	}
 }
 
 @layer utilities {
-  .scrollbar::-webkit-scrollbar {
-    width: 20px;
-    height: 20px;
-  }
+	.scrollbar::-webkit-scrollbar {
+		width: 20px;
+		height: 20px;
+	}
 
-  .scrollbar::-webkit-scrollbar-track {
-    border-radius: 100vh;
-    background: #3b3937;
-  }
+	.scrollbar::-webkit-scrollbar-track {
+		border-radius: 100vh;
+		background: #3b3937;
+	}
 
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: #B1B1A0;
-    border-radius: 100vh;
-    border: 2px solid #B1B1A0;
-  }
+	.scrollbar::-webkit-scrollbar-thumb {
+		background: #b1b1a0;
+		border-radius: 100vh;
+		border: 2px solid #b1b1a0;
+	}
 
-  /* .scrollbar::-webkit-scrollbar-thumb:hover {
+	/* .scrollbar::-webkit-scrollbar-thumb:hover {
     background: #c0a0b9;
   } */
 }

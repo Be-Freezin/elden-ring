@@ -8,7 +8,7 @@ const WeaponSelect = ({
 	name,
 	hover,
 	setHover,
-	stats, ashesList
+	stats,
 }) => {
 console.log(stats)
 
@@ -82,7 +82,7 @@ console.log(stats)
 							)}
 						</div>
 					)}
-					<Ashes ashesList={ashesList} />
+					
 					{/* {hover && (
 						<div className="w-44 h-fit bg-accent-primary absolute top-8 rounded-md z-50">
 							<span className="small-txt text-black">Weapon Requirements</span>

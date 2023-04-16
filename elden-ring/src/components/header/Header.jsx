@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Header = () => {
-  return (
+	return (
 		<div className=" p-12 flex flex-col justify-center items-center">
 			<div className=" text-white text-center flex flex-col justify-center items-center w-4/6 lg:max-w-2xl">
 				<h1 className="text-4xl py-6 text-white text-center">
@@ -17,7 +17,8 @@ const Header = () => {
 				</p>
 				<p className="small-txt">
 					Elden Ring calculations are complicated, this site is a good starting
-					point to get a shell of your build set up. In the future i may dive deeper into this and set up calculations proper
+					point to get a shell of your build set up. In the future i may dive
+					deeper into this and set up calculations proper
 				</p>
 			</div>
 		</div>
