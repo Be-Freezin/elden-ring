@@ -3,6 +3,7 @@
 ## Description
 
 A tool to help the user plan out there build for the game Elden Ring. Elden Ring is a game from the company FromSoftware, they are world renowned for there challenging games such as Dark Souls (1, 2 and 3), Bloodborne, and most recently Elden Ring. I wanted to create a way for someone to plan out there build for there gaming experience. I utilized an open source API dedicated to the game and all data is coming from the API. There are some things missing from this API, but i wanted to use it anyways and do with it what i can. I will continue to develop this site as i grow more as a developer and work on the complex calculations that these games tend to have.
+Making the site pretty wasn't the the focus of this project, the focus was purely on the technical side of react and javascript.
 
 ## Techstack
 
