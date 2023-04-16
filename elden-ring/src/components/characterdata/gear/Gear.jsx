@@ -47,7 +47,6 @@ const Gear = ({ armor, talismansData, weapons, stats, ashes }) => {
 				handList={handList}
 			/>
 
-			{/* TALISMANS */}
 			<br />
 			<hr className="w-1/2 mx-auto text-white_muted" />
 			<div className="md:flex-row md:justify-evenly  mobile-container">

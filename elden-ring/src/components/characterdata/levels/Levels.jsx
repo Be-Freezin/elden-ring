@@ -2,12 +2,7 @@ import React from 'react'
 
 import Stat from '../stat/Stat'
 
-const Levels = ({
-	stats,
-	setStats,
-
-	setClassName,
-}) => {
+const Levels = ({ stats, setStats, setClassName }) => {
 	const classChoices = [
 		{
 			name: 'Hero',

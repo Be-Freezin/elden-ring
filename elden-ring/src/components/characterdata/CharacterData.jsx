@@ -24,13 +24,11 @@ const CharacterData = () => {
 		vigor: { name: 'Vigor', init: null, value: null },
 	})
 
-
 	const [level, setLevel] = useState(null)
-	
 
 	const [armorData, setArmorData] = useState([])
 	const [talismansData, setTalismansData] = useState([])
-	const[ashesData, setAshesData] = useState([])
+	const [ashesData, setAshesData] = useState([])
 	const [weaponData, setWeaponData] = useState([])
 	useEffect(() => {
 		fetchFromAPI(`classes?name=${className}`).then(({ data }) => {
@@ -86,9 +84,6 @@ const CharacterData = () => {
 				},
 			})
 
-			
-			
-			
 			setClassName(data.data[0].name)
 		})
 	}, [className])
@@ -107,7 +102,6 @@ const CharacterData = () => {
 		fetchArmorData()
 	}, [])
 
-	
 	useEffect(() => {
 		fetchFromAPI(`talismans?limit=100`).then(({ data }) => {
 			setTalismansData(data.data)
@@ -123,7 +117,7 @@ const CharacterData = () => {
 		let page = 0
 		const newWeapons = []
 		const fetchWeaponsData = async () => {
-			while (page < 5){
+			while (page < 5) {
 				const { data } = await fetchFromAPI(`weapons?limit=100&page=${page}`)
 				newWeapons.push(...data.data)
 				page++
@@ -146,8 +140,13 @@ const CharacterData = () => {
 					setLevel={setLevel}
 					description={description}
 				/>
-				<Gear armor={armorData} talismansData={talismansData} weapons={weaponData}
-				stats={stats} ashes={ashesData} />
+				<Gear
+					armor={armorData}
+					talismansData={talismansData}
+					weapons={weaponData}
+					stats={stats}
+					ashes={ashesData}
+				/>
 				{/* <Stats /> */}
 			</div>
 		</div>

@@ -10,8 +10,6 @@ const WeaponSelect = ({
 	setHover,
 	stats,
 }) => {
-console.log(stats)
-
 	return (
 		<>
 			<div className="flex flex-col my-6 ">
@@ -32,8 +30,10 @@ console.log(stats)
 				>
 					{selectedWeapon && (
 						<div>
-							{stats.strength.value < selectedWeapon.requiredAttributes[0].amount ||
-							stats.dexterity.value < selectedWeapon.requiredAttributes[1].amount? (
+							{stats.strength.value <
+								selectedWeapon.requiredAttributes[0].amount ||
+							stats.dexterity.value <
+								selectedWeapon.requiredAttributes[1].amount ? (
 								<span className="small-txt text-red">
 									Req:{' '}
 									{selectedWeapon.requiredAttributes[0]
@@ -82,7 +82,7 @@ console.log(stats)
 							)}
 						</div>
 					)}
-					
+
 					{/* {hover && (
 						<div className="w-44 h-fit bg-accent-primary absolute top-8 rounded-md z-50">
 							<span className="small-txt text-black">Weapon Requirements</span>

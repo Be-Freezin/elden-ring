@@ -18,7 +18,6 @@ const Weapons = ({ weapons, stats, ashes }) => {
 	const [hoverRight2, setHoverRight2] = useState(false)
 	const [hoverRight3, setHoverRight3] = useState(false)
 
-	//! WORK ON THE WEAPON STATE
 	const handleSelectChange = (event, setSelectedWeapon) => {
 		const selectedIndex = event.target.selectedIndex
 		setSelectedWeapon(weapons[selectedIndex])
@@ -39,7 +38,6 @@ const Weapons = ({ weapons, stats, ashes }) => {
 		)
 	})
 
-	console.log(ashes)
 	return (
 		<div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
