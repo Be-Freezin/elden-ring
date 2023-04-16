@@ -1,13 +1,16 @@
 # elden-ring
 
-## Description
-
 A tool to help the user plan out there build for the game Elden Ring. Elden Ring is a game from the company FromSoftware, they are world renowned for there challenging games such as Dark Souls (1, 2 and 3), Bloodborne, and most recently Elden Ring. I wanted to create a way for someone to plan out there build for there gaming experience. I utilized an open source API dedicated to the game and all data is coming from the API. There are some things missing from this API, but i wanted to use it anyways and do with it what i can. I will continue to develop this site as i grow more as a developer and work on the complex calculations that these games tend to have.
 Making the site pretty wasn't the the focus of this project, the focus was purely on the technical side of react and javascript.
 
 ## Techstack
 
-The technologies i used for this project are ReactJS, TailwindCSS, DaisyUI and Axios
+* **ReactJS**
+  * I wanted to use react for this project because i want to increase my proficiency and skill with react. This project has increased my knowledge and confidence in react and im excited to keep using react for future projects.
+* **TailwindCSS**
+  * Tailwind is a efficient way to make great, responsive layouts. I still feel like im not using tailwind to its fullest potential but that will all come in time. 
+* **DaisyUI**
+  * With styling not my main focus on this project, i wanted something i could use to make it look presentable with minimal effort. DaisyUI has been great at that. It works extremely well with tailwind and it is easily customizable.   
 
 ## Challenges/Things I learned
 
