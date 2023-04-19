@@ -83,20 +83,22 @@ const WeaponSelect = ({
 						</div>
 					)}
 
-					{/* {hover && (
+					{hover && selectedWeapon && (
 						<div className="w-44 h-fit bg-accent-primary absolute top-8 rounded-md z-50">
 							<span className="small-txt text-black">Weapon Requirements</span>
 							<div>
 								<ul className="text-black">
-									<li>
-										{selectedWeapon.requiredAttributes[0]
-											? selectedWeapon.requiredAttributes[0].name
-											: ''}
-										:
-										{selectedWeapon.requiredAttributes[0]
-											? selectedWeapon.requiredAttributes[0].amount
-											: 0}
-									</li>
+									
+										<li>
+											{selectedWeapon.requiredAttributes[0]
+												? selectedWeapon.requiredAttributes[0].name
+												: ''}
+											:
+											{selectedWeapon.requiredAttributes[0]
+												? selectedWeapon.requiredAttributes[0].amount
+												: 0}
+										</li>
+									
 									<li>
 										{selectedWeapon.requiredAttributes[1]
 											? selectedWeapon.requiredAttributes[1].name
@@ -136,7 +138,7 @@ const WeaponSelect = ({
 								</ul>
 							</div>
 						</div>
-					)} */}
+					)}
 				</div>
 			</div>
 		</>
