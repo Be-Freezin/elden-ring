@@ -84,56 +84,57 @@ const WeaponSelect = ({
 					)}
 
 					{hover && selectedWeapon && (
-						<div className="w-44 h-fit bg-accent-primary absolute top-8 rounded-md z-50">
-							<span className="small-txt text-black">Weapon Requirements</span>
+						<div className="w-44 h-fit bg-red absolute top-8 p-2 rounded-md z-50 ">
+							<span className="font-bold small-txt text-black ">
+								Weapon Requirements
+							</span>
 							<div>
-								<ul className="text-black">
-									
-										<li>
-											{selectedWeapon.requiredAttributes[0]
-												? selectedWeapon.requiredAttributes[0].name
-												: ''}
-											:
-											{selectedWeapon.requiredAttributes[0]
-												? selectedWeapon.requiredAttributes[0].amount
-												: 0}
-										</li>
-									
+								<ul className="text-black font-bold ">
+									<li>
+										{selectedWeapon.requiredAttributes[0]
+											? selectedWeapon.requiredAttributes[0].name + ': '
+											: ''}
+
+										{selectedWeapon.requiredAttributes[0]
+											? selectedWeapon.requiredAttributes[0].amount
+											: 0}
+									</li>
+
 									<li>
 										{selectedWeapon.requiredAttributes[1]
-											? selectedWeapon.requiredAttributes[1].name
+											? selectedWeapon.requiredAttributes[1].name + ': '
 											: ''}
-										:
+
 										{selectedWeapon.requiredAttributes[1]
 											? selectedWeapon.requiredAttributes[1].amount
-											: 0}
+											: ''}
 									</li>
 									<li>
 										{selectedWeapon.requiredAttributes[2]
-											? selectedWeapon.requiredAttributes[2].name
+											? selectedWeapon.requiredAttributes[2].name + ': '
 											: ''}
-										:
+
 										{selectedWeapon.requiredAttributes[2]
 											? selectedWeapon.requiredAttributes[2].amount
-											: 0}
+											: ''}
 									</li>
 									<li>
 										{selectedWeapon.requiredAttributes[3]
-											? selectedWeapon.requiredAttributes[3].name
+											? selectedWeapon.requiredAttributes[3].name + ': '
 											: ''}
-										:
+
 										{selectedWeapon.requiredAttributes[3]
 											? selectedWeapon.requiredAttributes[3].amount
-											: 0}
+											: ''}
 									</li>
 									<li>
 										{selectedWeapon.requiredAttributes[4]
-											? selectedWeapon.requiredAttributes[4].name
+											? selectedWeapon.requiredAttributes[4].name + ': '
 											: ''}
-										:
+
 										{selectedWeapon.requiredAttributes[4]
 											? selectedWeapon.requiredAttributes[4].amount
-											: 0}
+											: ''}
 									</li>
 								</ul>
 							</div>
