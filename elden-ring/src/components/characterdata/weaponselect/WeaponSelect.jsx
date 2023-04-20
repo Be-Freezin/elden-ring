@@ -1,4 +1,5 @@
 import React from 'react'
+import Select from '../select/Select'
 import Ashes from '../ashes/Ashes'
 
 const WeaponSelect = ({
@@ -15,15 +16,14 @@ const WeaponSelect = ({
 		<>
 			<div className="flex flex-col my-6 ">
 				<span className="small-txt-label">{name}</span>
-				<select
+				<Select
 					className="daisy-select"
 					name="weaponsList"
 					id="weaponsList"
 					onChange={handleSelectChange}
-					value={selectedWeapon ? selectedWeapon.id : ''}
-				>
-					{weaponsList}
-				</select>
+					value={selectedWeapon ? selectedWeapon.id : ''} children={weaponsList}
+				/>
+			
 				<div
 					className="w-32 h-6 relative"
 					onMouseEnter={() => setHover(true)}
@@ -34,7 +34,7 @@ const WeaponSelect = ({
 							{stats.strength.value <
 								selectedWeapon.requiredAttributes[0].amount ||
 							stats.dexterity.value <
-								selectedWeapon.requiredAttributes[1].amount  ? (
+								selectedWeapon.requiredAttributes[1].amount ? (
 								<span className="small-txt text-red">
 									Req:{' '}
 									{selectedWeapon.requiredAttributes[0]
