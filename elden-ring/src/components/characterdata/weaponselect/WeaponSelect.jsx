@@ -10,7 +10,7 @@ const WeaponSelect = ({
 	setHover,
 	stats,
 }) => {
-	console.log(selectedWeapon)
+	
 	return (
 		<>
 			<div className="flex flex-col my-6 ">
