@@ -15,13 +15,14 @@ const WeaponSelect = ({
 	return (
 		<>
 			<div className="flex flex-col my-6 ">
-				<span className="small-txt-label">{name}</span>
+				
 				<Select
 					className="daisy-select"
 					name="weaponsList"
 					id="weaponsList"
 					onChange={handleSelectChange}
 					value={selectedWeapon ? selectedWeapon.id : ''} children={weaponsList}
+					label={name}
 				/>
 			
 				<div

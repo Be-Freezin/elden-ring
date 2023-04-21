@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Select = ({ label, id, placeholder, onChange, children, ...rest }) => {
+const Select = ({ label, id, placeholder, onChange, children }) => {
 
 	return (
 		<div className="flex flex-col">
@@ -11,7 +11,7 @@ const Select = ({ label, id, placeholder, onChange, children, ...rest }) => {
 				id={id}
 				placeholder={placeholder}
 				onChange={onChange}
-				{...rest}
+				
 			>
 				{children}
 			</select>

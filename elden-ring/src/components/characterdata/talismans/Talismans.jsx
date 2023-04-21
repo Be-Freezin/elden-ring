@@ -1,4 +1,5 @@
 import React from 'react'
+import Select from '../select/Select'
 
 const Talismans = ({ talismansData }) => {
 	const talismansList = talismansData.map((item, id) => {
@@ -13,54 +14,47 @@ const Talismans = ({ talismansData }) => {
 		<div className="w-full ">
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
 				<div className="flex flex-col ">
-					<span className="small-txt-label">Talisman 1</span>
-					<select
+					<Select
 						className="daisy-select"
-						name="armorList"
-						id="armorList"
-						placeholder="Chest Armor"
-					>
-						{talismansList}
-					</select>
+						name="talismansList"
+						id="talismansList"
+						children={talismansList}
+						label="Talisman 1"
+					/>
 				</div>
 				<div className="flex flex-col">
-					<span className="small-txt-label">Talisman 2</span>
-					<select
+					<Select
 						className="daisy-select"
-						name="armorList"
-						id="armorList"
-						placeholder="Chest Armor"
-					>
-						{talismansList}
-					</select>
+						name="talismansList"
+						id="talismansList"
+						children={talismansList}
+						label="Talisman 2"
+					/>
 				</div>
 			</div>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
 				<div className="flex flex-col ">
-					<span className="small-txt-label">Talisman 3</span>
-					<select
+					<Select
 						className="daisy-select"
-						name="armorList"
-						id="armorList"
-						placeholder="Chest Armor"
-					>
-						{talismansList}
-					</select>
+						name="talismansList"
+						id="talismansList"
+						children={talismansList}
+						label="Talisman 3"
+					/>
 				</div>
 				<div className="flex flex-col">
-					<span className="small-txt-label">Talisman 4</span>
-					<select
+					
+					<Select
 						className="daisy-select"
-						name="armorList"
-						id="armorList"
-						placeholder="Chest Armor"
-					>
-						{talismansList}
-					</select>
+						name="talismansList"
+						id="talismansList"
+						children={talismansList}
+						label="Talisman 4"
+					/>
 				</div>
 			</div>
 		</div>
 	)
 }
-//! WORK ON THE TALISMENS COMPONENTS
+
 export default Talismans

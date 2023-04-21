@@ -39,7 +39,7 @@ const Weapons = ({ weapons, stats, ashes }) => {
 	})
 
 	return (
-		<div>
+		<>
 			<div className=" md:flex-row md:justify-evenly  mobile-container mt-6">
 				<div>
 					<WeaponSelect
@@ -130,7 +130,7 @@ const Weapons = ({ weapons, stats, ashes }) => {
 					<Ashes ashesList={ashesList} />
 				</div>
 			</div>
-		</div>
+		</>
 	)
 }
 
