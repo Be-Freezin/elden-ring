@@ -6,23 +6,30 @@ import Stats from './stats/Stats'
 import { fetchFromAPI } from '../../utils/fetchFromAPI'
 const characterReducer = (state, action) => {
 	switch (action.type) {
-		case 'XX':
-		case 'XX':
-		case 'XX':
+		case 'SET_STATS':
+			return {}
+		case 'INCREASE':
+			return {}
+		case 'DECREASE':
+			return {}
+		case 'CHANGE_CLASS':
+			return {}
+		case 'NAME_INPUT':
+			return {}
+
 		default:
 			throw new Error(`Should never happen!`)
 	}
 }
 const CharacterData = () => {
-
-	const [state, dispatch] = useReducer(characterReducer, {
+	const [character, dispatch] = useReducer(characterReducer, {
 		character: {
 			startingClass: '',
 			name: '',
 			level: '',
 			stats: {
 				vigor: {
-					init: '',
+					init: 0,
 					value: '',
 				},
 				dexterity: {
@@ -56,7 +63,7 @@ const CharacterData = () => {
 			},
 		},
 	})
-
+	// console.log(dispatch({ type: 'SETSTATS' }))
 	const [classData, setClassData] = useState([])
 
 	const [description, setDescription] = useState('')
@@ -182,6 +189,7 @@ const CharacterData = () => {
 		<div className="lg:flex-container-even mobile-container h-full bg-black ">
 			<div className="mobile-container lg:flex-container-even  bg-black">
 				<Levels
+				
 					stats={stats}
 					setStats={setStats}
 					classData={classData}

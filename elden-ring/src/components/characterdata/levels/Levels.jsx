@@ -55,6 +55,7 @@ const Levels = ({ stats, setStats, setClassName }) => {
 
 	function handleChange(event) {
 		setClassName(event.target.value)
+		
 	}
 	function handleUpdateState(state, setState, propertyName, value) {
 		setState((prevState) => ({
