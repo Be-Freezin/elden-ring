@@ -1,11 +1,62 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useReducer } from 'react'
 import Gear from './gear/Gear'
 import Levels from './levels/Levels'
 import Stats from './stats/Stats'
 
 import { fetchFromAPI } from '../../utils/fetchFromAPI'
-
+const characterReducer = (state, action) => {
+	switch (action.type) {
+		case 'XX':
+		case 'XX':
+		case 'XX':
+		default:
+			throw new Error(`Should never happen!`)
+	}
+}
 const CharacterData = () => {
+
+	const [state, dispatch] = useReducer(characterReducer, {
+		character: {
+			startingClass: '',
+			name: '',
+			level: '',
+			stats: {
+				vigor: {
+					init: '',
+					value: '',
+				},
+				dexterity: {
+					init: '',
+					value: '',
+				},
+				arcane: {
+					init: '',
+					value: '',
+				},
+				endurance: {
+					init: '',
+					value: '',
+				},
+				faith: {
+					init: '',
+					value: '',
+				},
+				intelligence: {
+					init: '',
+					value: '',
+				},
+				mind: {
+					init: '',
+					value: '',
+				},
+				strength: {
+					init: '',
+					value: '',
+				},
+			},
+		},
+	})
+
 	const [classData, setClassData] = useState([])
 
 	const [description, setDescription] = useState('')
