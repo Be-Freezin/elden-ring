@@ -2,68 +2,13 @@ import React, { useEffect, useState, useReducer } from 'react'
 import Gear from './gear/Gear'
 import Levels from './levels/Levels'
 import Stats from './stats/Stats'
+import { characterReducer, INIT_STATE } from '../../characterReducer'
 
 import { fetchFromAPI } from '../../utils/fetchFromAPI'
-const characterReducer = (state, action) => {
-	switch (action.type) {
-		case 'SET_STATS':
-			return {}
-		case 'INCREASE':
-			return {}
-		case 'DECREASE':
-			return {}
-		case 'CHANGE_CLASS':
-			return {}
-		case 'NAME_INPUT':
-			return {}
 
-		default:
-			throw new Error(`Should never happen!`)
-	}
-}
 const CharacterData = () => {
-	const [character, dispatch] = useReducer(characterReducer, {
-		character: {
-			startingClass: '',
-			name: '',
-			level: '',
-			stats: {
-				vigor: {
-					init: 0,
-					value: '',
-				},
-				dexterity: {
-					init: '',
-					value: '',
-				},
-				arcane: {
-					init: '',
-					value: '',
-				},
-				endurance: {
-					init: '',
-					value: '',
-				},
-				faith: {
-					init: '',
-					value: '',
-				},
-				intelligence: {
-					init: '',
-					value: '',
-				},
-				mind: {
-					init: '',
-					value: '',
-				},
-				strength: {
-					init: '',
-					value: '',
-				},
-			},
-		},
-	})
-	// console.log(dispatch({ type: 'SETSTATS' }))
+	const [state, dispatch] = useReducer(characterReducer, INIT_STATE)
+	console.log(state)
 	const [classData, setClassData] = useState([])
 
 	const [description, setDescription] = useState('')
@@ -76,13 +21,13 @@ const CharacterData = () => {
 		endurance: { name: 'Endurance', init: null, value: null },
 		faith: { name: 'Faith', init: null, value: null },
 		intelligence: { name: 'Intelligence', init: null, value: null },
-		level: { name: 'Level', init: null, value: null },
+		// level: { name: 'Level', init: null, value: null },
 		mind: { name: 'Mind', init: null, value: null },
 		strength: { name: 'Strength', init: null, value: null },
 		vigor: { name: 'Vigor', init: null, value: null },
 	})
 
-	const [level, setLevel] = useState(null)
+	// const [level, setLevel] = useState(null)
 
 	const [armorData, setArmorData] = useState([])
 	const [talismansData, setTalismansData] = useState([])
@@ -92,55 +37,59 @@ const CharacterData = () => {
 		fetchFromAPI(`classes?name=${className}`).then(({ data }) => {
 			setClassData(data.data[0].stats)
 			setDescription(data.data[0].description)
+			dispatch({
+				type: 'SET_STATS',
+				level: { init: data.data[0].stats.level },
+			}),
+				setStats({
+					...stats,
+					dexterity: {
+						...stats.dexterity,
+						init: data.data[0].stats.dexterity,
+						value: data.data[0].stats.dexterity,
+					},
+					arcane: {
+						...stats.arcane,
+						init: data.data[0].stats.arcane,
+						value: data.data[0].stats.arcane,
+					},
+					endurance: {
+						...stats.endurance,
+						init: data.data[0].stats.endurance,
+						value: data.data[0].stats.endurance,
+					},
+					faith: {
+						...stats.faith,
+						init: data.data[0].stats.faith,
+						value: data.data[0].stats.faith,
+					},
+					intelligence: {
+						...stats.intelligence,
+						init: data.data[0].stats.intelligence,
+						value: data.data[0].stats.intelligence,
+					},
 
-			setStats({
-				...stats,
-				dexterity: {
-					...stats.dexterity,
-					init: data.data[0].stats.dexterity,
-					value: data.data[0].stats.dexterity,
-				},
-				arcane: {
-					...stats.arcane,
-					init: data.data[0].stats.arcane,
-					value: data.data[0].stats.arcane,
-				},
-				endurance: {
-					...stats.endurance,
-					init: data.data[0].stats.endurance,
-					value: data.data[0].stats.endurance,
-				},
-				faith: {
-					...stats.faith,
-					init: data.data[0].stats.faith,
-					value: data.data[0].stats.faith,
-				},
-				intelligence: {
-					...stats.intelligence,
-					init: data.data[0].stats.intelligence,
-					value: data.data[0].stats.intelligence,
-				},
-				level: {
-					...stats.level,
-					init: data.data[0].stats.level,
-					value: data.data[0].stats.level,
-				},
-				mind: {
-					...stats.mind,
-					init: data.data[0].stats.mind,
-					value: data.data[0].stats.mind,
-				},
-				strength: {
-					...stats.strength,
-					init: data.data[0].stats.strength,
-					value: data.data[0].stats.strength,
-				},
-				vigor: {
-					...stats.vigor,
-					init: data.data[0].stats.vigor,
-					value: data.data[0].stats.vigor,
-				},
-			})
+					// level: {
+					// 	...stats.level,
+					// 	init: data.data[0].stats.level,
+					// 	value: data.data[0].stats.level,
+					// },
+					mind: {
+						...stats.mind,
+						init: data.data[0].stats.mind,
+						value: data.data[0].stats.mind,
+					},
+					strength: {
+						...stats.strength,
+						init: data.data[0].stats.strength,
+						value: data.data[0].stats.strength,
+					},
+					vigor: {
+						...stats.vigor,
+						init: data.data[0].stats.vigor,
+						value: data.data[0].stats.vigor,
+					},
+				})
 
 			setClassName(data.data[0].name)
 		})
@@ -186,17 +135,16 @@ const CharacterData = () => {
 	}, [])
 
 	return (
-		<div className="lg:flex-container-even mobile-container h-full bg-black ">
-			<div className="mobile-container lg:flex-container-even  bg-black">
+		<div className='lg:flex-container-even mobile-container h-full bg-black '>
+			<div className='mobile-container lg:flex-container-even  bg-black'>
 				<Levels
-				
 					stats={stats}
 					setStats={setStats}
 					classData={classData}
 					className={className}
 					setClassName={setClassName}
-					level={level}
-					setLevel={setLevel}
+					level={state.character.level}
+					// setLevel={setLevel}
 					description={description}
 				/>
 				<Gear
